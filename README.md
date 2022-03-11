@@ -1,2 +1,2 @@
 # golang
-github belajar pemrogramman golang
+github belajar golang
