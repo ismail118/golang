@@ -1,0 +1,3 @@
+see documentation about package golang unit testing
+doc https://pkg.go.dev/testing
+ex https://pkg.go.dev/testing#pkg-examples
