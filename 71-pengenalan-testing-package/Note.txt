@@ -1,3 +1,11 @@
 see documentation about package golang unit testing
 doc https://pkg.go.dev/testing
 ex https://pkg.go.dev/testing#pkg-examples
+
+1.testing.T
+golang menyediakan sebuah struct yang bernama testing.T yang di gunakan untuk unit test di golang
+2.testing.M
+adalah struct yang disediakan golang untuk mengatur life cycle testing
+3.testing.B
+adalah struct yang disediakan golang untuk melakukan benchmarking,
+digolang untuk melakukan benchmark ( mengukur kecepatan kode program ) pun sudah disediakan
