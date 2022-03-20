@@ -60,3 +60,21 @@ github belajar golang
 	*Menjalankan Semua Unit Test
 	-jika kita ingin menjalankan semua unit dari root folder module nya, kita bisa gunakan peirntah
 	 go test -v ./...
+
+73.Menggagalkan Unit Test
+	-menggagalkan unit test menggunakan panic() bukanlah hal yg bagus
+	-golang sudah menyediakan cara untuk menggagalkan unit test menggunakan testing.T
+	-terdapat function Fail(), FailNow(), Error() dan Fatal() jika kita ingin menggagalkan unit test
+	
+	Penjelasan functin:
+	*t.Fail()
+	 akan menggagalkan unit test, namun tetap melanjutkan eksekusi unit test, Namun diakhir ketika selesai maka unit test tersebut dianggap gagal
+	*t.FailNow()
+	 akan menggagalkan unit test saat ini juga, tanpa melanjutkan eksekusi unit test
+	*t.Error(args...)
+	 function ini lebih seperti melakukan log (print) error, namun setelah melakukan log error,
+	 dia akan otomatis memanggil function t.Fail()
+	*t.Fatal()
+	 mirip dengan t.Error() hanya saja setelah melakukan log error, dia secara otomatis akan memanggil t.FailNow()
+
+	Note: recomended mengguanakn function t.Error() dan t.Fatal() karena ada log nya
