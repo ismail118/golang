@@ -78,3 +78,24 @@ github belajar golang
 	 mirip dengan t.Error() hanya saja setelah melakukan log error, dia secara otomatis akan memanggil t.FailNow()
 
 	Note: recomended mengguanakn function t.Error() dan t.Fatal() karena ada log nya
+
+74.Assertions
+	-melakukan pengecekan di unit test secara manual menggunakan if else sangatlah menyebalkan
+	-apalagi jika result data yang harus di cek itu banyak
+	-oleh karena itu, sangat disarankan untuk menggunakan Asserion untuk melakukan pengecekan
+	-sayangnya golang tidak menyediakan package untuk assertion, sehingga kita BUTUH MENAMBAHKAN LIBRARY untuk melakukan Assertion ini
+
+	*Testify
+	-adalah salah satu library asserion yang paling populer di golang
+	-link https://github.com/stretchr/testify
+	-untuk menbahkan library gunakan perintah
+	 go get github.com/stretchr/testify
+
+	*testify.Assert()
+	-saat kita menggunakan assert, jika pengecekan gagal, maka assert akan memanggil Fail(),
+	 artinya eksekusi unit test akan tetap dilanjutkan
+	*testify.Require()
+	-saat kita menggunakan assert, jika pengecekan gagal, maka assert akan memanggil FailNow(),
+	 artinya eksekusi unit test tidak akan dilanjutkan
+	
+
