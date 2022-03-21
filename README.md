@@ -98,4 +98,11 @@ github belajar golang
 	-saat kita menggunakan assert, jika pengecekan gagal, maka assert akan memanggil FailNow(),
 	 artinya eksekusi unit test tidak akan dilanjutkan
 	
+75.Skip Test
+	untuk membatalkan test ( bukan untuk menggagalkan )
+	
+	*Why We Need This?
+	-kadang dalam keadaan tertentu, kita ingin membatalkan eksekusi unit test
+	-di golang kita bisa membatalkan eksekusi unit test jika kita mau
+	-untuk membatalkan unit test kita bisa menggunakan function Skip("message")
 
