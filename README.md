@@ -106,3 +106,16 @@ github belajar golang
 	-di golang kita bisa membatalkan eksekusi unit test jika kita mau
 	-untuk membatalkan unit test kita bisa menggunakan function Skip("message")
 
+76.Before dan After Test
+	-biasanya dalam unit test, kadang kita ingin melakukan sesuatu sebelum dan setelah sebuah unit test dieksekusi
+	-jika kode yang kita lakukan sebelum dan setelah selalu sama antara unit test function,
+	 maka membuat manual di unit test function nya adalah hal yang membosankan dan terlalu banyak kode duplikat jadinya
+	-untungnya golang terdapat fitur yang bernama testing.M
+	-fitur ini bernama Main, dimana digunakan untuk mengatur eksekusi unit test, namun hal ini juga bisa kita gunakan untuk
+	 melakukan Before dan After di unit test
+	
+	*testing.M
+	-untuk mengatur eksekusi unit test, kita cukup membuat sebuah function bernama TestMain dengan parameter testing.M
+	-jika terdapat function TestMain tersebut, maka secara otomatis golang akan mengeksekusi function ini setiap kali akan menjalankan unit test di sebuah package
+	-dengan ini kita bisa mengatur Before dan After unit test sesuai dengan yang kita mau
+	-ingat function TestMain itu dieksekusi hanya sekali per goalng package, bukan pertiap function unit test
