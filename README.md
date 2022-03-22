@@ -128,3 +128,10 @@ github belajar golang
 	*Menjalankan hanya sub test
 	-jika hanya ingin menjalankan hanya salah satu sub test, kita bisa gunakan perintah
 	 go test -run TestNamaFunction/NamaSubTest
+
+78.Table Test
+	-sebelumnya kita sudah belajar tentang sub test
+	-jika diperhatikan, sebenarnya dengan sub test, kita bisa membuat test secara dinamis
+	-dan fitur sub test ini, bisa di gunakan oleh programmer golang untuk membuat test dengan konsep table test
+	-table test yaitu dimana kita menyediakan data berupa slice yang berisi parameter dan ekspetasi hasil dari unit test
+	-lalu slice tersebut kita iterasi menggunakan sub test
