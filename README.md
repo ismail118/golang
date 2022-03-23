@@ -262,4 +262,6 @@ github belajar golang
 	-kita hanya cukup menambahkan perintah "go" sebelum memanggil function yang akan kita jalankan dalam goroutine
 	-saat sebuah function kita jalankan dalam goroutine, function tersebut akan berjalan secara asynchronouse, artinya tidak akan ditunggu sampai function tersebut selesai
 	-aplikasi akan lanjut berjalan ke kode program selanjutnya tanpa menunggu goroutine yang kita buat selesai
+
+90.Goroutine Sangat Ringan
 	
