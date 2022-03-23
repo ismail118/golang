@@ -196,3 +196,70 @@ github belajar golang
 83.Table Benchmark
 	-sama seperti di unit test, programmer golang terbiasa membuat table benchmark juga
 	-ini digunakan agar kita bisa mudah melakukan performance test dengan kombinasi data berbeda-beda tanpa harus membuat banyak benchmark function
+
+86.Pengenalan Concurrency dan Parallel Programming
+	*Pengenalan Parallel Programming
+	-saat ini kita hidup di era multicore, dimana jarang sekali kita menggunakan processor yang single core
+	-semakin canggih perangkat kerjas, maka software pun akan mengikuti, dimana sekarang kita bisa dengan mudah membuat proses parallel di aplikasi.
+	-parallel programming sederhananya adalah memecahkan suatu masalahdengan cara membaginya menjadi yang lebih kecil, 
+	 dan dijalankan secara bersamaan pada waktu yang bersamaan pula
+
+	Contoh Parallel:
+	-menjalankan beberapa aplikasi sekaligus di sistem operasi kita (office, editor, browser dan lain-lain)
+	-beberapa koki menyiapkan makana di restoran, dimana tiap koki membuat makanan masing-masing
+	-antrian di bank, dimana tiap teller melayani nasabah nya masing-masing
+
+	Process vs Thread
+	#Process
+	-process adalah sebuah eksekusi program
+	-process mengkonsumsi memory besar
+	-process saling terisolasi dengan process lain
+	-process lama untuk dijalankan dihentikan
+	#Thread
+	-Thread adalah segmen dari process
+	-Thread menggunakan memory kecil
+	-Thread bisa saling berhubungan jika dalam process yang sama
+	-Thread cepat untuk dijalankan dan dihentikan
+
+	Parallel vs Concurrency
+	-berbeda dengan parallel ( menjalankan beberapa pekerjaan secara bersamaan), concurrency adalah menjalankan beberapa pekerjaan secara bergantian
+	-dalam parallel kita biasanya membutuhkan banyak Thread, sedangkan dalam concurrency kita hanya membutuhkan sedikit Thread
+
+	Contoh Concurrency
+	-saat kita makan di cafe, kita bisa makan, lalu ngobrol, lalu minum, makan lagi, ngobrol lagi, minum lagi, dan seterusnya.
+	 Tetapi kita tidak bisa pada saat yang bersamaan minum, makan dan ngobrol, hanya bisa melakukan satu hal pada satu waktu,
+	 namun bisa bergantian kapanpun kita mau
+
+	#CPU-bound vs I/O-bound
+	CPU-bound
+	-banyak algoritma dibuat yang hanya membutuhkan CPU untuk menjalankannya, Algoritma jenis ini biasanya sangat tergantung dengan kecepatan CPU
+	-contoh yang paling populer adalah Machine Learning, oleh karena itu sekarang banyak sekali teknologi Machine Learning yang banyak menggunakan G-PU
+	 karena memiliki core yang lebih banyak dibanding CPU biasanya
+	-jenis algoritma seperti ini tidak ada benefitnya menggunakan Concurrency Programming, namun bisa dibantu dengan implementasi Parallel Programming
+	
+	I/O-bound
+	-I/O-bound adalah kebalikan dari sebelumnya, dimana biasanya algoritma atau aplikasinya sangat tergantung dengan kecepatan input output device yang digunakan
+	-contohnya aplikasi seperti membaca data dari file, database, dan lain-lain
+	-kebanyakan saat ini, biasanya kita akan membuat aplikasi jenis seperti ini
+	-aplikasi jenis I/O-bound, walaupun bisa terbantu dengan implementasi Parallel Programming, tapi benefitnya akan lebih baik jika menggunakan Concurrency Programming
+	-bayangkan kita membaca data dari database, dan Thread harus menunggu 1 detik untuk mendapat balasan dari database, 
+	 padahal waktu 1 detik itu jika menggunakan Concurrency Programming, bisa di gunakan untuk melakukan hal lain lagi
+
+87.Pengenalan Goroutine
+	-goroutine adalah sebuah thread ringan yang dikelola oleh go-runtime
+	-ukuran go-runtime sangat kecil sekitar 2kb, jauh lebih kecil dibandingkan Thread yang bisa sampai 1mb atau 1000kb
+	-namun tidak seperti thread yang berjalan parallel, go-runtime berjalan secara concurrent
+
+	#Cara Kerja Goroutine
+	-sebenarnya Goroutine dijalankan oleh Go Sheduler dalam thread, dimana jumlah thread nya sebanyak GOMAXPROCS ( biasanya sejumlah core CPU )
+	-jadi sebenarnya tidak bisa dibilang Goroutine itu pengganti Thread, karena Goroutine sendiri berjalan di atas Thread
+	-namun yang mempermudah kita adalah, kita tidak perlu melakukan manajemen Thread secara manual, semua sudah diatur ole Go Scheduler
+
+88.Membuat Project
+
+89.Membuat Goroutine
+	-untuk membuat goroutine di golang sangatlah sederhana
+	-kita hanya cukup menambahkan perintah "go" sebelum memanggil function yang akan kita jalankan dalam goroutine
+	-saat sebuah function kita jalankan dalam goroutine, function tersebut akan berjalan secara asynchronouse, artinya tidak akan ditunggu sampai function tersebut selesai
+	-aplikasi akan lanjut berjalan ke kode program selanjutnya tanpa menunggu goroutine yang kita buat selesai
+	
