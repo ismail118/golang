@@ -135,3 +135,22 @@ github belajar golang
 	-dan fitur sub test ini, bisa di gunakan oleh programmer golang untuk membuat test dengan konsep table test
 	-table test yaitu dimana kita menyediakan data berupa slice yang berisi parameter dan ekspetasi hasil dari unit test
 	-lalu slice tersebut kita iterasi menggunakan sub test
+
+79.Mock
+	-moch adalah object yang sudah kita program dengan ekspektasi tertentu sehingga ketika dipanggil, dia akan menghasilkan data yang sudah kita program diawal
+	-mock adalah salah satu teknik dalam unit testing, dimana kita bisa membuat mock object dari suatu object yang memang sulit untuk di tsting
+	-contohnya kita ingin membuat unit test, namun ada kode program yang harus memanggil API Call ke third party service. Hal ini sangat sulit untuk di test,
+	 karena unit testing kita harus selalu memanggil third party service, dan belum tentu response nya sesuai dengan apa yang kita mau
+	-pada kasus seperti ini cocok sekali untuk menggunakan mock object
+
+	*Testify Mock
+	-untuk membuat mock object, tidak ada fiture bawaan goalng, namu kita bisa mengguakan library testify yang sebelumnya kita gunakan untuk assertion
+	-testify mendukung pembuatan mock object, sehingga cocok untuk kita gunakan ketika ingin membuat mock object
+	-namun perlu diperhatikan, jika desain kod program kita jelek, akan sulit untuk melakukan mocking, 
+	 jadi pastikan kita melakukan pembuatan desain kode program kita dengan baik
+
+	*contoh kasusu
+	#Aplikasi Query ke Database
+	-kita akan coba contoh khusus dengan membuat contoh aplikasi golang yang melakukan query ke database
+	-diaman kita akan buat layer Service sebagai business logic, dan layer Repository sebagai jembatan ke database
+	-agar kode kita mudah untuk di test, disarankan agar membuat kontrak berupa interface	
