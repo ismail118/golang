@@ -154,3 +154,38 @@ github belajar golang
 	-kita akan coba contoh khusus dengan membuat contoh aplikasi golang yang melakukan query ke database
 	-diaman kita akan buat layer Service sebagai business logic, dan layer Repository sebagai jembatan ke database
 	-agar kode kita mudah untuk di test, disarankan agar membuat kontrak berupa interface	
+
+80.Benchmark
+	-selain unit test, golang testing package juga mendukung malekukan benchmark
+	-benchmark adalah mekanisme meghitung kecepatan performa kode aplikasi kita
+	-benchmark di golang dilakukan dengan secara otomatis melakukan iterasi kode yang kita panggil berkali-kali sampai waktu tertentu
+	-kita tidak perlu menentukan jumlah iterasi dan lamanya, karena itu sudah diatur oleh testing.B bawaan dari testing package
+
+	*testing.B
+	-adalah struct yang digunakan untuk melakukan benchmark
+	-testing.B mirip seperti testing.T, terdapat function Fail(), FailNow() , Error(), Fatal() dan lain-lain
+	-yang membedakan, ada beberapa attribute dan function tambahan yang digunakan untuk melakukan benchmark
+	-salah satunya adlaah attribute N, ini digunakan untuk melakukan total iterasi sebuah benchmark
+
+	*Cara Kerja Benchmark
+	-cara kerja benchmark di golang sangat sederhana
+	-dimana kita hanya perlu membuat perulangan sejumlah N attribute
+	-nanti secara otomatis golang akan melakukan eksekusi sejumlah perulangan yang ditentukan secara otomatis, lalu mendeteksi berapa lama proces tersebut berjalan,
+	 dan disimpulkan performa benchmark nya dalam waktu
+
+81.Membuat Benchmark
+	*Benchmark Function
+	-mirip seperti unit test, untuk benchmark pun, di golang sudah ditentukan nama functionnya, harus diawali dengan kata Benchmark, misal BenchmarkHelloWorld
+	-selain itu, harus memiliki parameter (b 8testing.B)
+	-dan tidak boleh mengembalikan return value
+	-untuk nama file benchmark, sama seperti unit test, diakhiri dengan _test, misal hello_world_test.go
+
+	#Menjalankan Benchmark
+	-untuk menjalankan seluruh benchmark di module, kita bisa menggunakan perintah sama seperti test, namun ditambahkan parameter bench:
+	 go test -v -bench=.
+	-jika kita hanya ingin menjalankan benchmark tanpa unit test, kita bisa gunakan perintah:
+	 go test -v -run=NotMathUnitTest -bench=.
+	-kode diatas selain menjalankan benchmark, akan menjalankan unit test juga, jika kita hanya ingin menjalankan benchmark tertentu, kita bisa gunakan perintah:
+	 go test -v -run=NotMathUnitTest -bench=BenchmarkTest
+	-jika kita menjalankan benchmark di root module dan ingin semua module dijalankan, kita bisa gunakan perintah:
+	 go test -v -bench=. ./...
