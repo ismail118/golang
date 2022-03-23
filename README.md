@@ -189,3 +189,10 @@ github belajar golang
 	 go test -v -run=NotMathUnitTest -bench=BenchmarkTest
 	-jika kita menjalankan benchmark di root module dan ingin semua module dijalankan, kita bisa gunakan perintah:
 	 go test -v -bench=. ./...
+
+82.Sub Benchmark
+	* konsepnya sama seperti #77.Sub Test
+
+83.Table Benchmark
+	-sama seperti di unit test, programmer golang terbiasa membuat table benchmark juga
+	-ini digunakan agar kita bisa mudah melakukan performance test dengan kombinasi data berbeda-beda tanpa harus membuat banyak benchmark function
