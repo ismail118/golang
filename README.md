@@ -264,4 +264,30 @@ github belajar golang
 	-aplikasi akan lanjut berjalan ke kode program selanjutnya tanpa menunggu goroutine yang kita buat selesai
 
 90.Goroutine Sangat Ringan
+
+91.Pengenalan Channel
+	-channel adalah tempat komunikasi secara synchronous yang bisa dilakukan oleh goroutine
+	-di channel terdapat pengirim dan penerima, biasanya pengirim dan penerima adalah goroutine yang berbeda
+	-saat melakukan pengiriman data ke channel, goroutine akan terblock sampai ada yang menerima data tersebut
+	-maka dari itu, channel disebut sebagai alat komunikasi synchronous (block)
+	-channel cocok sekali sebagai alternatif seperti mekanisme async await yang terdapat di beberapa bahasa pemrogramman
+
+	*Karakteristik Channel
+	-secara default channel hanya bisa menampung satu data, jika kita ingin menambahkan data lagi, harus menunggu data yang ada di channel diambil
+	-channel hanya bisa menerima satu jenis data
+	-channel bisa diambil lebih dari satu goroutine
+	-channel harus di close jika tidak digunakan, atau bisa menyebabkan memory leak
+
+92.Membuat Channel
+	-channel di golang direpresentasikan dengan tipe data chan
+	-untuk membuat channel sangat mudah, kita bisa menggunakan make(), mirip ketika membuat map
+	-namun saat pembuatan channel, kita harus tentukan tipe data apa yang bisa dimasukkan ke dalam channel tersebut
+	ex channel := make(chan string)
+
+	#Mengirim dan Menerima Data dari Channel
+	-seperti yang sudah dibahas sebelumnya, channel bisa digunakan untuk mengirim dan menerima data
+	-untuk mengirim data, kita bisa gunnakan kode: channel <- data
+	-sedangkan untuk menerima data, bisa gunakan kode: data <- channel
+	-jika selesai, jangan lupa untuk menutup channel menggunakan function close()
+
 	
