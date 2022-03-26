@@ -290,4 +290,10 @@ github belajar golang
 	-sedangkan untuk menerima data, bisa gunakan kode: data <- channel
 	-jika selesai, jangan lupa untuk menutup channel menggunakan function close()
 
+93.Channel Sebagai Parameter
+	-dalam kenyataan pembuatan aplikasi, seringnya kita akan mengirim channel ke function lain via parameter
+	-sebelumnya kita tahu bahkan di golang by default, parameter adalah pass by value, artinya value akan diduplikasi lalu dikirim ke function parameter,
+	 sehingga jika kita ingin mengirim data asli, kita biasa gunakan pointer (agar pass by reference)
+	-berbeda dengan channel, kita tidak perlu melakukan hal tersebut
+
 	
