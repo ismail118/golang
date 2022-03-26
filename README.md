@@ -296,4 +296,10 @@ github belajar golang
 	 sehingga jika kita ingin mengirim data asli, kita biasa gunakan pointer (agar pass by reference)
 	-berbeda dengan channel, kita tidak perlu melakukan hal tersebut
 
+94.Channel In dan Out
+	-saat kita mengirim channel sebagai parameter, isi function tersebut bisa mengirim dan menerima data dari channel tersebut
+	-kadang kita ingin memberi tahu terhadap function, misal bahwa channel tersebut hanya digunakan untuk emngirim data,
+	 atau hanya dapat digunakan untuk menerima data
+	-hal ini bisa kita lakukan di parameter dengan cara menandai apakah channel ini digunakan untuk in (mengirim data) atau out (menerima data)
+
 	
