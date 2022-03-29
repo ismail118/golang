@@ -324,3 +324,10 @@ github belajar golang
 	-salah satu yang bisa kita lakukan adalah dengan menggunakan perulangan range ketika menerima data dari channel
 	-ketika sebuah channel di close(), maka secara otomatis perulangan tersebut akan berhenti
 	-ini lebih sederhana dari pada kita melakukan pengecekan channel secara manual
+
+97.Select Channel
+	-kadang ada kasus dimana kita membuat beberapa channel, dan menjalankan beberapa goroutine
+	-lalu kita ingin mendapatkan data dari semua channel tersebut
+	-untuk melakukan hal tersebut, kita bisa menggunakan select channel di golang
+	-dengan select channel, kita bisa memilih data tercepat dari beberapa channel, jika data datang
+	 secara bersamaan di beberapa channel, maka akan dipilih secara random
