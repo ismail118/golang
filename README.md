@@ -318,3 +318,9 @@ github belajar golang
 	cara membuat Buffer Channel hampir sama seperti membuat channel biasa, hanya ada perbedaan sedikit, berikut contohnya:
 	channel := make(chan string, 5)
 	
+96.Range Channel
+	-kadang-kadang ada kasus sebuah channel dikirim data secara terus menerus oleh pengirim
+	-dan kadang tidak jelas kapan channel tersebut akan berhenti menerima data
+	-salah satu yang bisa kita lakukan adalah dengan menggunakan perulangan range ketika menerima data dari channel
+	-ketika sebuah channel di close(), maka secara otomatis perulangan tersebut akan berhenti
+	-ini lebih sederhana dari pada kita melakukan pengecekan channel secara manual
