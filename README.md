@@ -302,4 +302,19 @@ github belajar golang
 	 atau hanya dapat digunakan untuk menerima data
 	-hal ini bisa kita lakukan di parameter dengan cara menandai apakah channel ini digunakan untuk in (mengirim data) atau out (menerima data)
 
+95.Buffered Channel
+	-seperti yang dijelaskan sebelumnya, bahwa secara default channel itu hanya bisa menerima 1 data
+	-aritnya jika kita menambah data ke-2, maka kita akan diminta menunggu sampai data ke-1 ada yang mengambil
+	-kadang-kadang ada kasus dimana pengirim lebih cepat dibanding penerima, dalam hal ini jika kita menggunakan channel,
+	 maka otomatis pengirim akan ikut lambat juga
+	-untungnya ada Buffered Channel, yaitu buffer yang bisa digunakan untuk menampung data antrian di channel
+
+	#Buffer Capacity
+	-kita bebas memasukkan berapa jumlah kapasitas antrian di dalam buffer
+	-jika kita set misal 5, artinya kita bisa menerima 5 data di buffer
+	-jika kita mengirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong
+	-ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
+
+	cara membuat Buffer Channel hampir sama seperti membuat channel biasa, hanya ada perbedaan sedikit, berikut contohnya:
+	channel := make(chan string, 5)
 	
