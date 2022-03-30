@@ -339,3 +339,7 @@ github belajar golang
 	-dalam select, kita bisa menambahkan default, dimana ini akan diekseuksi jika memang di semua channel yang kita select tidak ada datanya
 
 99.Race Condition
+	Masalah Dengan Goroutine
+	-saat kita menggunakan goroutine, dia tidak hanya berjalan secara concurrent, tapu bisa parallel juga, karena bisa ada beberapa thread yang berjalan secara parallel
+	-hal ini sangat berbahaya ketika kita melakukan manipulasi data variable yang sama oleh beberapa goroutine secara bersamaan
+	-hal ini bisa menyebabkan masalah yang namanya Race Condition
