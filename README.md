@@ -331,3 +331,11 @@ github belajar golang
 	-untuk melakukan hal tersebut, kita bisa menggunakan select channel di golang
 	-dengan select channel, kita bisa memilih data tercepat dari beberapa channel, jika data datang
 	 secara bersamaan di beberapa channel, maka akan dipilih secara random
+
+98.Default Select
+	-apa yang terjadi jika kita melakukan select terhadap channel yang ternyata tidak ada datanya?
+	-maka kita akan menunggu sampai data ada
+	-kadang mungkin kita ingin melakukan sesuatu jika misal semua channel tidak ada datanya ketika kita melakukan select channel
+	-dalam select, kita bisa menambahkan default, dimana ini akan diekseuksi jika memang di semua channel yang kita select tidak ada datanya
+
+99.Race Condition
