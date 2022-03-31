@@ -356,3 +356,8 @@ github belajar golang
 	-kadang ada kasus dimana kita ingin melakukan locking tidak hanya pada proses mengubah data, tapi juga membaca data
 	-kita sebenarnya bisa menggunakan Mutex saja, namun masalahnya nanti akan rebutan antara proses membaca dan mengubah
 	-di golang telah disediakan struct RWMutex (Read Write Mutex) untuk menangani hal ini, dimana Mutex jenis ini memiliki dua lock, lock untuk Read dan lock untuk Write
+
+102.Deadlock
+	-hati-hati saat membuat aplikasi yang parallel atau concurent, masalah yang sering kita hadapi adalah Deadlock
+	-deadlock adalah keadaan dimana sebuah proses goroutine saling menunggu lock sehingga tidak ada satupun goroutine yang bisa jalan
+	-sekarang kita coba simulasikan proses deadlock
