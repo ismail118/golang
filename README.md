@@ -370,3 +370,8 @@ github belajar golang
 	-untuk menandai bahwa ada proses goroutine, kita bisa menggunakan method Add(int),
 	 setelah proses goroutine selesai, kita bisa gunakan method Done()
 	-untuk menunggu semua proses selesai, kita bisa menggunakan method Wait()
+
+104.Once
+	-once adalah fitur di golang yang bisa kita gunakan untuk memastikan bahasa sebuah function di eksekusi hanya sekali
+	-jadi berapa banyakpun goroutine yang mengakses, bisa dipastikan bahwa goroutine yang pertama yang bisa mengeksekusi function nya
+	-goroutine yang lain akan di hiraukan, artinya function tidak akan dieksekusi lagi
