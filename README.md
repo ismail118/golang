@@ -361,3 +361,12 @@ github belajar golang
 	-hati-hati saat membuat aplikasi yang parallel atau concurent, masalah yang sering kita hadapi adalah Deadlock
 	-deadlock adalah keadaan dimana sebuah proses goroutine saling menunggu lock sehingga tidak ada satupun goroutine yang bisa jalan
 	-sekarang kita coba simulasikan proses deadlock
+
+103.WaitGroup
+	-waitgroup adalah fitur yang bisa digunakan untuk menunggu sebuah proses dilakukan
+	-hal ini kadang diperlukan, misal kita ingin menjalankan beberapa proses menggunakan goroutine,
+	 tapi kita ingin semua proses selesai terlebih dahulu sebelum aplikasi kita selesai
+	-kasus seperti ini bisa menggunakan WaitGroup
+	-untuk menandai bahwa ada proses goroutine, kita bisa menggunakan method Add(int),
+	 setelah proses goroutine selesai, kita bisa gunakan method Done()
+	-untuk menunggu semua proses selesai, kita bisa menggunakan method Wait()
