@@ -357,12 +357,12 @@ github belajar golang
 	-kita sebenarnya bisa menggunakan Mutex saja, namun masalahnya nanti akan rebutan antara proses membaca dan mengubah
 	-di golang telah disediakan struct RWMutex (Read Write Mutex) untuk menangani hal ini, dimana Mutex jenis ini memiliki dua lock, lock untuk Read dan lock untuk Write
 
-102.Deadlock
+102.Sync.Deadlock
 	-hati-hati saat membuat aplikasi yang parallel atau concurent, masalah yang sering kita hadapi adalah Deadlock
 	-deadlock adalah keadaan dimana sebuah proses goroutine saling menunggu lock sehingga tidak ada satupun goroutine yang bisa jalan
 	-sekarang kita coba simulasikan proses deadlock
 
-103.WaitGroup
+103.Sync.WaitGroup
 	-waitgroup adalah fitur yang bisa digunakan untuk menunggu sebuah proses dilakukan
 	-hal ini kadang diperlukan, misal kita ingin menjalankan beberapa proses menggunakan goroutine,
 	 tapi kita ingin semua proses selesai terlebih dahulu sebelum aplikasi kita selesai
@@ -371,7 +371,13 @@ github belajar golang
 	 setelah proses goroutine selesai, kita bisa gunakan method Done()
 	-untuk menunggu semua proses selesai, kita bisa menggunakan method Wait()
 
-104.Once
+104.Sync.Once
 	-once adalah fitur di golang yang bisa kita gunakan untuk memastikan bahasa sebuah function di eksekusi hanya sekali
 	-jadi berapa banyakpun goroutine yang mengakses, bisa dipastikan bahwa goroutine yang pertama yang bisa mengeksekusi function nya
 	-goroutine yang lain akan di hiraukan, artinya function tidak akan dieksekusi lagi
+
+105.Sync.Pool
+	-pool adalah implementasi design pattern bernama object pool pattern
+	-sederhananya design pattern pool ini digunakan untuk menyimpan data, selanjutnya untuk menggunakan datanya, kita bisa mengambil dari pool,
+	 dan setelah selesai menggunakan datanya, kita bisa menyimpan kembali ke poolnya
+	-implementasi pool digolang ini sudah aman dari problem race condition
