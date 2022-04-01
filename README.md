@@ -381,3 +381,13 @@ github belajar golang
 	-sederhananya design pattern pool ini digunakan untuk menyimpan data, selanjutnya untuk menggunakan datanya, kita bisa mengambil dari pool,
 	 dan setelah selesai menggunakan datanya, kita bisa menyimpan kembali ke poolnya
 	-implementasi pool digolang ini sudah aman dari problem race condition
+
+106.Sync.Map
+	-golang memiliki sebuah struct bernama sync.Map
+	-map ini mirip golang map, namun yang membedakan, Map ini aman untuk menggunakan concurrent menggunakan goroutine
+	-ada beberapa function yang bisa kita gunakan di Map:
+		~Store(key, value) untuk menimpan data ke map
+		~Load(key) untuk mengambil data dari Map menggunakan key
+		~Delete(key) untuk menghapus data di Map menggunakan key
+		~Range(function(key, value)) digunakan untuk melakukan iterasi seluruh data di Map
+
