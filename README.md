@@ -391,3 +391,10 @@ github belajar golang
 		~Delete(key) untuk menghapus data di Map menggunakan key
 		~Range(function(key, value)) digunakan untuk melakukan iterasi seluruh data di Map
 
+107.Sync.Vond
+	-cond adalah implementasi locking berbasis kondisi
+	-cond membutuhkan locker (bisa menggunakan Mutex atau RWMutex) untuk implementasi lockingnya, namun berbeda dengan locker biasanya, di cond terdapat function Wait()
+	 untuk menunggu apakah perlu menunggu atau tidak
+	-function Signal() bisa digunakan untuk memberi tahu sebuah goroutine agar tidak perlu menunggu lagi, sedangkan function Broadcast() 
+	 digunakan untuk memberi tahu semua goroutine agar tidak perlu menunggu lagi
+	-untuk membuat Cond, kita bias menggunakan function sync.NewCond(Locker)
