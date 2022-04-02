@@ -405,3 +405,17 @@ github belajar golang
 	-contohnya, sebelumnya kita telah menggunakan Mutex untuk melakukan locking ketika ingin menaikkan angka di counter,
 	 hal ini sebenarnya bisa digunakan menggunakan Atomic package
 	-ada banyak sekali function di atomic package, kita bisa ekplore sendiri di halaman dokumentasinya
+
+109.time.Timer
+	-timer adalah representasi satu kejadian
+	-ketika wkatu timer sudah expire, maka event akan dikirim ke dalam channel
+	-untuk membuat timer kita bisa menggunakan time.NewTimer(duration
+
+	#time.After()
+	-kadang kita hanya butuh channel nya saja, tidak membutuhkan data Timer nya
+	-untuk melakukan hal itu kita bisa menggunakan function time.After(duration)
+
+	#time.AfterFunc()
+	-kadang ada kebutuhan kita ingin menjalankan sebuah function dengan delay waktu tertentu
+	-kita bisa memanfaatkan Timer dengan menggunakan function time.AfterFunct()
+	-kita tidak perlu lagi menggunakan channel nya, cukup kirim kan function yang akan dipanggil ketika Timer mengirim kejadian
