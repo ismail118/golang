@@ -430,3 +430,11 @@ github belajar golang
 	-kadang kita tidak butuh data Ticker nya, kita hnay butuh channel nya saja
 	-jika demikian, kita bisa menggunakan function timer.Tick(duration), function ini tidak akan
 	 mengembalikan Ticker, hanya mengembalikan channel timer nya saja
+
+111.GOMAXPROCS
+	-sebelumnya diawal kita sudah bahas bahwa gorutine itu sebenarnya dijalankan di dalam Thread
+	-pertanyaannya seberapa banyak Thread yang ada di golang ketika aplikasi kita berjalan?
+	-untuk mengetahui berapa jumlah Thread, kita bisa menggunakan GOMAXPROCS, yaitu sebuah
+	 sebuah function di package runtime yang bisa kita gunakan untuk mengubah jumlah thread atau mengambil jumlah thread
+	-secara default, jumlah thread di golang itu sebanyak jumlah CPU di komputer kita
+	-kita juga bisa melihat berapa jumlah CPU kita dengan menggunakan function runtime,NumCpu()
