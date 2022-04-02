@@ -391,10 +391,17 @@ github belajar golang
 		~Delete(key) untuk menghapus data di Map menggunakan key
 		~Range(function(key, value)) digunakan untuk melakukan iterasi seluruh data di Map
 
-107.Sync.Vond
+107.Sync.Cond
 	-cond adalah implementasi locking berbasis kondisi
 	-cond membutuhkan locker (bisa menggunakan Mutex atau RWMutex) untuk implementasi lockingnya, namun berbeda dengan locker biasanya, di cond terdapat function Wait()
 	 untuk menunggu apakah perlu menunggu atau tidak
 	-function Signal() bisa digunakan untuk memberi tahu sebuah goroutine agar tidak perlu menunggu lagi, sedangkan function Broadcast() 
 	 digunakan untuk memberi tahu semua goroutine agar tidak perlu menunggu lagi
 	-untuk membuat Cond, kita bias menggunakan function sync.NewCond(Locker)
+
+108.Atomic
+	-golang memiliki package yang bernama sync/atomic
+	-atomic merupakan package yang digunakan untuk menggunakan data primitive secara aman pada proses concurrent
+	-contohnya, sebelumnya kita telah menggunakan Mutex untuk melakukan locking ketika ingin menaikkan angka di counter,
+	 hal ini sebenarnya bisa digunakan menggunakan Atomic package
+	-ada banyak sekali function di atomic package, kita bisa ekplore sendiri di halaman dokumentasinya
