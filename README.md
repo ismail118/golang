@@ -419,3 +419,14 @@ github belajar golang
 	-kadang ada kebutuhan kita ingin menjalankan sebuah function dengan delay waktu tertentu
 	-kita bisa memanfaatkan Timer dengan menggunakan function time.AfterFunct()
 	-kita tidak perlu lagi menggunakan channel nya, cukup kirim kan function yang akan dipanggil ketika Timer mengirim kejadian
+
+110.time.Ticker
+	-ticker adalah representasi kejadian yang berulang
+	-ketika wkatu ticker sudah expire, maka event akan dikirim ke dalam channel
+	-untuk membuat ticker, kita bisa menggunakan time,NewTicker(duration)
+	-untuk menghentikan ticker, kita bisa menggunakan Ticker.Stop()
+
+	#time.Tick()
+	-kadang kita tidak butuh data Ticker nya, kita hnay butuh channel nya saja
+	-jika demikian, kita bisa menggunakan function timer.Tick(duration), function ini tidak akan
+	 mengembalikan Ticker, hanya mengembalikan channel timer nya saja
