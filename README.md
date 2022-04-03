@@ -470,3 +470,28 @@ github belajar golang
 	-context.TODO()
 	 membuat context kosong seperti Background(), namun biasanya menggunakan ini ketika belum jelas context apa yang ingin digunakan
 
+116.Parent dan Child Context
+	-context menganut konsep parent dan child
+	-artinya, saat kita membuat context, kita bisa membuat child context dari context yang sudah ada
+	-parent context bisa memiliki banyak child, namun child hanya bisa memiliki satu parent context
+	-konsep ini mirip dengan pewarisan di pemrograman berorientasi object
+
+	#Hubungan Antara Parent dan Child Context
+	-parent dan child context akan selalu terhubung
+	-saat nanti kita melakukan misal pembatalan context A, maka semua child dan sub child dari context A akan ikut dibatalkan
+	-namun jika misal kita membatalkan context B, hanya context B dan semua child dan sub child nya yang dibatalkan,
+	 parent context B tidak akan ikut dibatalkan
+	-begitu juga nanti saat kita menyisipkan data ke dalam context A, semua child dan sub child nya bisa mendapatkan data tersebut
+	-namun jika kita menyisipkan data di context B, hanya context B dan semua child dan sub child nya yang mendapat data, parent context B tidak akan mendapat data
+
+	#Immutable
+	-context merupakan object yang immutabel, artinya setelah context dibuat, dia tidak bisa diubah lagi
+	-ketika kita menambahkan value ke dalam context, atau menambahkan pengaturan timeout dan yang lainnya, secara otomatis akan membentuk child context baru, 
+	 bukan merubah context tersebut
+
+117.Context With Value
+	-pada saat awal membuat context, context tidak memiliki value
+	-kita bisa menambah sebuah value dengan data Pair (key - value) ke dalam context
+	-saat kita menambah value ke context, secara otomatis akan tercipta child context baru, 
+	 artinya original context nya tidak akan berubah sama sekali
+	-untuk membuat menambahkan value ke context, kita bisa menggunakan function context.WithValue(parent, key, value)
