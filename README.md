@@ -438,3 +438,35 @@ github belajar golang
 	 sebuah function di package runtime yang bisa kita gunakan untuk mengubah jumlah thread atau mengambil jumlah thread
 	-secara default, jumlah thread di golang itu sebanyak jumlah CPU di komputer kita
 	-kita juga bisa melihat berapa jumlah CPU kita dengan menggunakan function runtime,NumCpu()
+
+#Bagian 5 (Golang Context)
+
+114.Pengenalan Context
+	-context merupakan sebuah data yang membawa value, sinyal cancel, sinyal timeout dan sinyal deadline
+	-context biasanya dibuat per request (misal setiap ada requset masuk ke server web melalui http request)\
+	-context digunakan untuk mempermudah kita meneruskan value, dan sinyal antar proses
+
+	#Kenapa Context Perlu Dipelajari?
+	-context di golang biasanya digunakan untuk mengirim data request atau sinyal ke proses lain
+	-dengan menggunakan context, ketika kita ingin membatalkan semua proses, kita cukup mengirim sinyal ke context
+	 maka secara otomatis semua proses akan dibatalkan
+	-hampir semua bagian di golang memanfaatkan context, seperti database, http sever, http client, dan lain-lain
+	-bahkan di google sendiri, ketika menggunakan golang, context wajib digunakan dan selalu dikirm ke setiap function yang dikirim
+
+	#Package Context
+	-context direpresentasikan di dalam sebuah interface Context
+	-interface Context terdapat dalam package context
+	-https://pkg.go.dev/context
+
+115.Membuat Context
+	-karena context adalah sebuah inteface, untuk membuat context kita butuh sebuah struct yang sesuai dengan kontreak interface context
+	-namun kita tidak perlu membuatnya secara manual
+	-di golang package context terdapat function yang bisa kita gunakan untuk membuat context
+
+	#Function Membuat Context
+	-context.Background()
+	 membuat context kosong, tidak pernah dibatalkan, tidak pernah timeout, dan tidak memiliki value apapun, Biasanya digunakan di main function atau dalam test,
+	 atau dalam awal proses request terjadi
+	-context.TODO()
+	 membuat context kosong seperti Background(), namun biasanya menggunakan ini ketika belum jelas context apa yang ingin digunakan
+
