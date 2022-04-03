@@ -495,3 +495,12 @@ github belajar golang
 	-saat kita menambah value ke context, secara otomatis akan tercipta child context baru, 
 	 artinya original context nya tidak akan berubah sama sekali
 	-untuk membuat menambahkan value ke context, kita bisa menggunakan function context.WithValue(parent, key, value)
+
+118.Context With Cancel
+	-selain menambahkan value ke context, kita juga bisa menambahkan sinyal cencel ke context
+	-kapan sinyal cencel diperlukan dalam context?
+	-biasanya ketika kita butuh menjalankan proses lain, dan kita ingin bisa memberi sinyal cancel ke proses tersebut
+	-biasanya proses ini berupa goroutine yang berbeda, sehingga dengan mudah jika kita ingin membatalkan eksekusi goroutine, 
+	 kita bisa mengirim sinyal cancel ke context nya
+	-namun ingat, goroutine yang menggunakan context, tetap harus melakukan pengecekan terhadap context nya, jika tidak, tidak ada gunannya
+	-untuk membuat context dengan cancel signal, kita bisa menggunakan function context.WithCancel(parent)
