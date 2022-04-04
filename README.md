@@ -584,3 +584,50 @@ github belajar golang
 	 jika return data false, artinya sudah tidak ada data lagi didalam result
 	-untuk membaca tiap data, kita bisa menggunakan (Rows) Scan(columns...)
 	-dan jangan lupa, setelah menggunakan Rows, jangan lupa untuk menutupnya menggunakan (Rows) Close()
+
+129.Tipe Data Column
+	-sebelumnya kita hanya membuat table dengan tipe data di kolomnya berupa VARCHAR
+	-untuk varchar di database, biasanya kita gunakan string di golang
+	-bagaimana dengan tipe data yang lain?
+	-apa representasinya di golang, misal tipe data timestamp, date dan lain-lain
+
+	#Buat Table Baru
+	CREATE TABLE buyer ( id VARCHAR(100) NOT NULL, name VARCHAR(100) NOT NULL, email VARCHAR(100), balance INTEGER DEFAULT 0, 
+rating DOUBLE DEFAULT 0.0, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, birth_date DATE, married BOOLEAN DEFAULT false, PRIMARY KEY (id) ) ENGINE = InnoDB;
+
+	#Mapping Tipe Data di Database --> Tipe Data di Golang
+	VARCHAR, CHAR --> string
+	INT, BIGINT --> int32, int64
+	FLOAT, DOUBLE --> float32, float64
+	BOOLEAN --> bool
+	DATE, DATETIME, TIME, TIMESTAMP --> time.Time
+
+	#Kode Insert Data buyer
+	INSERT INTO buyer (id, name, email, balance, rating, birth_date, married) 
+VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko', 'Eko', 'eko@gmail.com', 100000, 5.0, '1999-9-9', true);
+	
+	#Error Tipe Data Date
+	-secara default, Driver MySql untuk golang akan melakukan query tipe data DATE, DATETIME, TIMESTAMP menjadi []byte / []uint8,
+	 dimana ini bisa dikonversi menjadi String, lalu di parsing menjadi time.Time
+	-namun hal ini merepotkan jika dilakukan manual, kita bisa meminta Driver MySQL 
+	 untuk Golang secara otomatis melakukan parsing dengan menambahkan parameter parseDate=true ( pada saat membuat koneksi ke db)0
+	ex: db, err := sql.Open("mysql", "root:Colonelgila123@tcp(localhost:3306)/belajar_golang_database?parseTime=true")
+	 
+	#Nullable Type
+	-golang database tidak mengerti dengan tipe data NULL di database
+	-oleh karena itu, khusus untuk kolom yang bisa NULL di database, akan jadi masalah jika kita
+	 melakukan Scan secara bulat-bulat menggunakan tipe data representasinya di golang
+
+	#Error Data Null
+	-konversi secara otomatis NULL tidak didukung oleh Driver MySQL Golang
+	-oleh karena itu, khusus tipe kolom yang bisa NULL, kita perlu menggunakan tipe data yang ada dalam package.sql
+	
+	Tipe Data Nullable
+	#Tipe Data Golang --> Tipe Data Nullable
+	string --> database/sql.NullString
+	bool --> database/sql.NullBool
+	float64 --> database/sql.NullFloat64
+	int32 --> database/sql.NullInt32
+	int64 --> database/sql.NullInt64
+	time.Time --> database/sql.NullTime
+	
