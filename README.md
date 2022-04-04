@@ -514,3 +514,9 @@ github belajar golang
 	 namun ingin menetukan batas maksimal timeout nya
 	-untuk membuat context dengan cancel signal secara otomatis menggunakan timeout, kita bisa menggunakan
 	 function context.WithTimeout(parent, duration)
+
+120.Context With Deadline
+	-selain menggunakan timeout untuk melakukan cancel secara otomatis, kita juga bisa menggunakan deadline
+	-pengaturan deadline sedikit berbeda dengan timeout, jika timeout kita beri waktu dari sekarang,
+	 kalo deadline ditentukan kapan waktu timeoutnya, misal jam 12 siang hari ini
+	-untuk membuat context dengan cancel secara otomatis menggunakan deadline, kita bisa menggunakan function context.WithDeadline(parent, time)

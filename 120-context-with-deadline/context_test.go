@@ -1,4 +1,4 @@
-package _19_context_with_timeout
+package _20_context_with_deadline
 
 import (
 	"context"
@@ -30,10 +30,10 @@ func CreateCounter(ctx context.Context) chan int {
 	return destination
 }
 
-func TestContextWithTimeout(t *testing.T) {
+func TestContextWithDeadline(t *testing.T) {
 	fmt.Println("TOTAL GOROUTINE", runtime.NumGoroutine())
 	parent := context.Background()
-	ctx, cancel := context.WithTimeout(parent, 1*time.Second)
+	ctx, cancel := context.WithDeadline(parent, time.Now().Add(5*time.Second))
 	defer cancel()
 
 	destination := CreateCounter(ctx)
