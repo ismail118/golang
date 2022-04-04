@@ -563,3 +563,24 @@ github belajar golang
 	-(DB) SecConnMaxLifetime(duration)
 	 pengaturan berapa lama koneksi boleh digunakan
 
+127.Eksekusi Perintah SQL
+	-saat membuat aplikasi menggunakan database, sudah pasti kita ingin berkomunikasi dengan database menggunakan perintah SQL
+	-digolang juga menyediakan function yang bisa kita gunakan untuk mengirim perintah SQL ke database menggunakan function (DB)ExecContext(context, sql, params)
+	-ketika mengirim perintah SQL, kita butuh mengirimkan context, dan seperti yang sudah perinah kita pelajari di course golang context, dengan context, kita bisa
+	 mengirim sinyal cancel jika kita ingin membatalkan pengiriman perintah SQL nya
+	
+	#Kode Membuat Table Customer
+	CREATE TABLE customer ( id VARCHAR(100) NOT NULL, name VARCHAR(100) NOT NULL, PRIMARY KEY (id) ) ENGINE = InnoDB;
+
+128.Query SQL
+	-untuk operasi SQL yang tidak membutuhkan hasil, kita bisa menggunakan perintah Exec, namun jika kita membutuhkan result,
+	 seperti SELECT SQL, kita bisa menggunakan function yang berbeda
+	-function untuk melakukan query ke database, bisa menggunakan function (DB) QueryContext(context, sql, params)
+
+	#Rows
+	-hasil query function adalah sebuah data struct sql.Rows
+	-rows digunakan untuk melakukan iterasi terhadap hasil dari query
+	-kita bisa menggunakan function (Rows) Next() (boolean) untuk melakukan iterasi terhadap data hasil query,
+	 jika return data false, artinya sudah tidak ada data lagi didalam result
+	-untuk membaca tiap data, kita bisa menggunakan (Rows) Scan(columns...)
+	-dan jangan lupa, setelah menggunakan Rows, jangan lupa untuk menutupnya menggunakan (Rows) Close()
