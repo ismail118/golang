@@ -520,3 +520,20 @@ github belajar golang
 	-pengaturan deadline sedikit berbeda dengan timeout, jika timeout kita beri waktu dari sekarang,
 	 kalo deadline ditentukan kapan waktu timeoutnya, misal jam 12 siang hari ini
 	-untuk membuat context dengan cancel secara otomatis menggunakan deadline, kita bisa menggunakan function context.WithDeadline(parent, time)
+
+123.Pengenalan Package Database
+	-bahasa pemrograman golang secara default memiliki sebuah package bernama database
+	-package database adalah package yang berisikan kumpulan standard interface yang menjadi standard untuk berkomunikasi ke database
+	-hal ini menjadikan kode program yang kita buat untuk mengakses jenis database apapun bisa menggunakan kode yang sama
+	-yang berbeda hanya kode SQL yang perlu kita gunakan sesuai dengan database yang kita gunakan
+
+	root:Colonelgila123@/test
+
+123.Menambah Database Driver
+	-sebelum kita membuat kode program menggunakan database di golang, terlebih dahulu kita wajib menambahkan driver database nya
+	-tanpa driver database, maka package database di golang tidak mengerti apapun, karena hanya berisi kontrak interface saja
+	-doc https://golang.org/s/sqldrivers
+
+	#Menambahkan Module Database MySQL
+	go get -u github.com/go-sql-driver/mysql
+	
