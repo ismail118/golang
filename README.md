@@ -527,9 +527,7 @@ github belajar golang
 	-hal ini menjadikan kode program yang kita buat untuk mengakses jenis database apapun bisa menggunakan kode yang sama
 	-yang berbeda hanya kode SQL yang perlu kita gunakan sesuai dengan database yang kita gunakan
 
-	root:Colonelgila123@/test
-
-123.Menambah Database Driver
+124.Menambah Database Driver
 	-sebelum kita membuat kode program menggunakan database di golang, terlebih dahulu kita wajib menambahkan driver database nya
 	-tanpa driver database, maka package database di golang tidak mengerti apapun, karena hanya berisi kontrak interface saja
 	-doc https://golang.org/s/sqldrivers
@@ -537,3 +535,31 @@ github belajar golang
 	#Menambahkan Module Database MySQL
 	go get -u github.com/go-sql-driver/mysql
 	
+125.Membuka Koneksi ke Database
+	-hal yang pertama kali kita lakukan ketika membuat aplikasi yang akan menggunakan database adalah melakukan koneksi ke database nya
+	-untuk melakukan koneksi ke database di golang, kita bisa membuat project sql.DB menggunakan function sql.Open(driver, dataSourceName)
+	-untuk menggunakan database MySQL, kita bisa menggunakan driver "mysql"
+	-sedangkan untuk dataSourceName, tiap database biasanya punya cara penulisan masing-masing,
+	 misal di MySQL, kita bisa menggunakan format dataSourceName seperti dibawah ini:
+	 format : username:password@tcp(host:port)/database_name
+	 contoh : root:Colonelgila123@tcp(localhost:3306)/test
+	-jika object sql.DB sudah tidak digunakan lagi, disarankan untuk menutupnya menggunakan function Close()
+
+126.Database Pooling
+	-sql.DB di golang sebenarnya bukanlah sebuah koneksi ke database
+	-melainkan sebuah pool ke database, atau dikenal dengan konsep Database Pooling
+	-di dalam sql.DB, golang melakukan management koneksi ke database secara otomatis,
+	 hal ini menjadikan kita tidak perlu melakukan management koneksi database secara manual
+	-dengan kemampuan database pooling ini, kita bisa menentukan jumlah minimal dan maksimal koneksi yang dibuat oleh golang,
+	 sehingga tidak membanjiri koneksi ke database, karena biasanya ada batas maksimal koneksi yang bisa di tangani oleh database yang kita gunakan
+
+	#Pengaturan Database Pooling
+	-(DB) SetMaxIdleConns(number)
+	 pengaturan berapa jumlah koneksi minimal yang di buat
+	-(DB) SetMaxOpenConns(number)
+	 pengaturan berapa jumlah koneksi maksimal yang di buat
+	-(DB) SetConnMaxIdleTime(duration)
+	 pengaturan berapa lama koneksi yang sudah tidak digunakan akan dihapus
+	-(DB) SecConnMaxLifetime(duration)
+	 pengaturan berapa lama koneksi boleh digunakan
+
