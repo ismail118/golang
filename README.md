@@ -649,6 +649,17 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-jangan membuat query SQL secara manual dengan menggabungkan String secara bulat-bulat
 	-jika kita membutuhkan parameter ketika membuat SQL, kita bisa menggunakan function Execute atau Query dengan parameter yang akan kita bahas di chapter selanjutnya
 
+131.SQL Dengan Parameter
+	-sekarang kita sudah tahu bahaya nya SQL injection jika menggabungkan string ketika membuat query
+	-jika ada kebutuhan seperti itu, sebenarnya function Exec dan Query memiliki parameter tambahan
+	 yang bisa kita gunakan untuk mensubtitusi parameter dari function tersebut ke SQL Query yang kita buat
+	-untuk menandai sebuah SQL membutuhkan parameter, kita bisa gunakan karakter ? (tanda tanya)
+
+	#Contoh SQL
+	SELECT username FROM user WHERE username= ? AND password= ? LIMIT 1
+	INSERT INTO user(username, password) VALUES (?, ?)
+	Dan lain-lain
+
 
 
 go get -u github.com/go-sql-driver/mysql
