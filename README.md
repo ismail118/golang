@@ -660,6 +660,19 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	INSERT INTO user(username, password) VALUES (?, ?)
 	Dan lain-lain
 
+132.Auto Increment
+	-kadang kita membuat sebuah table dengan id auto increment
+	-dan kadang pula, kita ingin mengambil data id yang sudah kita insert ke dalam MySQL
+	-sebenarnya kita bisa melakukan query ulang ke database menggunakan SELECT LAST_INSERT_ID()
+	-tapi untungnya di golang ada cara yang lebih mudah
+	-kita bisa menggunakan function (Result) LastInsertId() untuk mendapatkan Id terakhir yang dibuat secara auto increment
+	-result adalah object yang dikembalikan ketika kita menggunakan function Exec
+
+	#Kode Membuat Table
+	CREATE TABLE comments ( id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) NOT NULL, comment TEXT, PRIMARY KEY (id)) ENGINE InnoDB;
+
+	
+
 
 
 go get -u github.com/go-sql-driver/mysql
