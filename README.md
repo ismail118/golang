@@ -630,4 +630,26 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	int32 --> database/sql.NullInt32
 	int64 --> database/sql.NullInt64
 	time.Time --> database/sql.NullTime
+
+130.SQL Injection
+	-saat membuat aplikasi, kita tidak mungkin akan melakukan hardcode perintah SQL di kode golang kita
+	-biasanya kita akan menerima input data dari user, lalu membuat perintah SQL dari input user, dan mengirimnya menggunakan perintah SQL
+
+	#Kode Membuat Table User
+	CREATE TABLE user ( username VARCHAR(100) NOT NULL, password VARCHAR(100) NOT NULL, PRIMARY KEY (username) ) ENGINE = InnoDB;
+	INSERT INTO user (username, password) VALUES ('admin', 'admin');
+
+	#SQL Injection
+	-sql injection adalah sebuah teknik yang menyalahgunakan sebuah celah keamanan yang terjadi dalam lapisan basis data sebuah aplikasi
+	-biasa, sql injection dilakukan dengan mengirim input dari user dengan perintah yang salah,
+	 sehingga menyebabkan hasil SQL yang kita buat menjadi tidak valid
+	-sql injection sangat berbahaya, jika sampai kita salah membuat SQL, bisa jadi data kita tidak aman
+
+	#Solusinya?
+	-jangan membuat query SQL secara manual dengan menggabungkan String secara bulat-bulat
+	-jika kita membutuhkan parameter ketika membuat SQL, kita bisa menggunakan function Execute atau Query dengan parameter yang akan kita bahas di chapter selanjutnya
+
+
+
+go get -u github.com/go-sql-driver/mysql
 	
