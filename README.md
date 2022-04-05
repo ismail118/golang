@@ -742,3 +742,8 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-hal ini juga bisa dilakukan menggunakan embed package
 	-kita bisa menambahkan komentar //go:embed lebih dari satu baris
 	-selain itu variable nya bisa kita gunakan tipe data embed.FS
+
+142.Patch Matcher
+	-selain manual satu per satu, kita bisa menggunakan patch matcher untuk membaca multiple file yang kita inginkan
+	-ini sangat cocok ketika misal kita punya pola jenis file yang kita inginkan untuk kita baca
+	-caranya, kita perlu menggunakan path matcher pada package function path.Match
