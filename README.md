@@ -747,3 +747,11 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-selain manual satu per satu, kita bisa menggunakan patch matcher untuk membaca multiple file yang kita inginkan
 	-ini sangat cocok ketika misal kita punya pola jenis file yang kita inginkan untuk kita baca
 	-caranya, kita perlu menggunakan path matcher pada package function path.Match
+
+143.Hasil Emebed di Compile
+	-perlu diketahui, bahwa hasil embed yang dilakukan oleh package embed adalah permanent dan data file yang dibaca disimpan dalam binary file golangnya
+	-artinya bukan dilakukan secara realtime membaca file yang ada diluar
+	-hal ini menjadikan jika binary file golang sudah di complie, kita tidak butuh lagi file externalnya,
+	 dan bahkan jika diubah file externalnya, isi variable nya tidak akan berubah lagi
+
+	NOTE: KODE NYA TIDAK SAYA TULIS, LIAT VIDEO TUTORIAL UNTUK LEBIH JELAS
