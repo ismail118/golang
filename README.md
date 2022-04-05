@@ -736,3 +736,9 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 140.Embed File ke Byte
 	-selain ke tipe data string, embed file juga bisa dilakukan ke variable tipe data []byte
 	-ini cocok sekali jika kita ingin melakukan embed file dalam bentuk binary, seperti gambar dan lain-lain
+
+141.Embed Multiple Files
+	-kadang ada kebutuhan kita ingin melakukan embed beberapa file sekaligus
+	-hal ini juga bisa dilakukan menggunakan embed package
+	-kita bisa menambahkan komentar //go:embed lebih dari satu baris
+	-selain itu variable nya bisa kita gunakan tipe data embed.FS
