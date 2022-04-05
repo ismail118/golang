@@ -671,7 +671,12 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	#Kode Membuat Table
 	CREATE TABLE comments ( id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) NOT NULL, comment TEXT, PRIMARY KEY (id)) ENGINE InnoDB;
 
-	
+133.Prepare Statement
+	#Query atau Exec dengan parameter
+	-saat kita menggunakan function Query() atau Exec() yang menggunakan parameter, sebenarnya implementasi dibawahnya menggunakan Prepare Statement
+	-jadi tahapan pertama statement nya disiapkan terlebih dahulu, setelah itu baru di isi dengan parameter
+	-kadang ada kasus kita ingin melakukan beberapa hal yang sama sekaligus, hanya berbeda parameternya, misal insert data langsung banyak
+	-pembuatan prepare statement bisa dilakukan dengan manual, tanpa harus menggunakan Query() atau Exec() dengan parameter
 
 
 
