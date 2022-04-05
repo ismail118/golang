@@ -688,7 +688,7 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-prepare statement direpresentasikan dalam struct database/sql.Stmt
 	-sama seperti resource sql lainnya, Stmt harus di Close() jika sudah tidak digunakan lagi
 	
-134.Databse Transaction
+134.Databse Transaction`
 	-salah satu fitur andalan di database adalah transaction
 	-materi database transaction sudah saya bahas dengan tuntas di curse MySql database, jadi silahakan pelajari di course tersebut
 	-di course ini kita akan fokus bagaimana menggunakan database transaction di golang
@@ -700,7 +700,18 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-struct Tx ini yang kita gunakan sebagai pengganti DB untuk melakukan transaksi, dimana hampir semua function di DB ada Tx, seperti Exec, Query atau Prepare
 	-setelah selesai proses transaksi, kita bisa gunakan function (Tx) Commit() untuk melakukan commit atau Rollback()
 
+135.Repository Pattern
+	-dalam buku Domain-Driven Design, Eric Evans menjelaskan bahwa 
+	 "repository is a mechanism for encapsulation storage, retrieval, and search behaviro, which emulates a collection of object"
+	-Pattern Repository ini biasanya digunakan sebagai jembatan antara business logic aplikasi kita dengan semua perintah SQL ke database
+	-jadi semua perintah SQL akan ditulis di Repository, sedangkan business logic kode program kita hanya cukup menggunakan Repository tersebut
 
+	#Entity / Model
+	-dalam pemrograman berorientasi object, biasanya sebuah tabel di database akan selalu dibuat representasinya sebagai class Entity atau Model,
+	 namun di golang, karena tidak mengenal Class jadi kita akan representasikan data dalam bentuk Struct
+	-ini bisa mempermudah ketika membuat kode program
+	-misal ketika kita query ke Repository, dibandingkan mengembalikan array, alangkah baiknya Repository melakukan konversi terlebih dahulu ke struct Entity / Model,
+	 sehingga kita tinggal gunakan objectnya saja
 
 
 go get -u github.com/go-sql-driver/mysql
