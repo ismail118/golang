@@ -678,6 +678,29 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-kadang ada kasus kita ingin melakukan beberapa hal yang sama sekaligus, hanya berbeda parameternya, misal insert data langsung banyak
 	-pembuatan prepare statement bisa dilakukan dengan manual, tanpa harus menggunakan Query() atau Exec() dengan parameter
 
+	#Prepare Statement
+	-saat kita membuat Prepare Statement, secara otomatis akan mengenali koneksi database yang digunakan
+	-sehingga ketika kita mengeksekusi Prepare Statement berkali-kali, 
+	 maka akan menggunakan koneksi yang sama dan lebih efisien karena pembuatan prepare statement nya hanya sekali diawal saja
+	-jika menggunakan Query() atau Exec() dengan parameter, kita tidak bisa menjamin bahwa koneksi yang digunakan akan sama,
+	 oleh karena itu, bisa jadi prepare statement akan selalu dibuat berkali-kali walaupun kita menggunakan SQL yang sama
+	-untuk membuat Prepare Statement, kita bisa menggunakan function (DB) Prepare(context, sql)
+	-prepare statement direpresentasikan dalam struct database/sql.Stmt
+	-sama seperti resource sql lainnya, Stmt harus di Close() jika sudah tidak digunakan lagi
+	
+134.Databse Transaction
+	-salah satu fitur andalan di database adalah transaction
+	-materi database transaction sudah saya bahas dengan tuntas di curse MySql database, jadi silahakan pelajari di course tersebut
+	-di course ini kita akan fokus bagaimana menggunakan database transaction di golang
+
+	#Transaction di Golang
+	-secara default, semua perintah SQL yang kita kirim menggunakan Golang akan otomatis di commit, atau istilahnya auto commit
+	-namun kita bisa menggunakan transaksi sehingga SQL yang kita kirim tidak secara otomatis di commit ke database
+	-untuk memulai transaksi, kita bisa menggunakan function (DB) Begin(), dimana akan menghasilkan struct Tx yang merupakan representasi Transaction
+	-struct Tx ini yang kita gunakan sebagai pengganti DB untuk melakukan transaksi, dimana hampir semua function di DB ada Tx, seperti Exec, Query atau Prepare
+	-setelah selesai proses transaksi, kita bisa gunakan function (Tx) Commit() untuk melakukan commit atau Rollback()
+
+
 
 
 go get -u github.com/go-sql-driver/mysql
