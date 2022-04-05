@@ -732,3 +732,7 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 139.Embed File ke String
 	-embed file bisa kita lakukan ke variable dengan tipe data string
 	-secara otomatis isi file akan dibaca sebagai text dan masukkan ke variable tersebut
+
+140.Embed File ke Byte
+	-selain ke tipe data string, embed file juga bisa dilakukan ke variable tipe data []byte
+	-ini cocok sekali jika kita ingin melakukan embed file dalam bentuk binary, seperti gambar dan lain-lain
