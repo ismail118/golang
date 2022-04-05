@@ -713,6 +713,22 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-misal ketika kita query ke Repository, dibandingkan mengembalikan array, alangkah baiknya Repository melakukan konversi terlebih dahulu ke struct Entity / Model,
 	 sehingga kita tinggal gunakan objectnya saja
 
+================= comand go get driver MySQL ================
+	go get -u github.com/go-sql-driver/mysql
 
-go get -u github.com/go-sql-driver/mysql
+#Bagian 7 (Golang Embed)
+
+138.Pengenalan Embed Package
+	-sejak golang versi 1.16 terdapat package baru dengan nama embed
+	-package embed adalah fitur baru untuk mempermudah membaca isi file pada saat compile time secara otomatis dimasukkan isi file nya dalam variable
+	doc https://pkg.go.dev/embed
+
+	#Cara Embed File
+	-untuk melakukan embed file ke variable, kita bisa mengimport package embed terlebih dahulu
+	-selanjutnya kita bisa tambahkan komentar //go:embed diikuti dengan nama file nya, diatas variable yang kita tuju
+	-variable yang dituju tersebut nanti secara otomatis akan berisi konten file yang kita inginkan secara otomatis ketika kode golang di compile
+	-variable yang dituju tidak bisa disimpan di dalam function
 	
+139.Embed File ke String
+	-embed file bisa kita lakukan ke variable dengan tipe data string
+	-secara otomatis isi file akan dibaca sebagai text dan masukkan ke variable tersebut
