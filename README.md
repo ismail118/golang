@@ -755,3 +755,81 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 dan bahkan jika diubah file externalnya, isi variable nya tidak akan berubah lagi
 
 	NOTE: KODE NYA TIDAK SAYA TULIS, LIAT VIDEO TUTORIAL UNTUK LEBIH JELAS
+
+146.Pengenalan Web
+	#Kenapa Web?
+	-saat ini web digunakan oleh jutaan, bahkan mungkin milyaran orang setiap hari
+	-dengan web, kita bisa melakukan belajar online, mendengarkan musik online, nonton video online, belanja online sampai memesan makanan secara online
+	-namun perlu diperhatikan, web bukanlah internet
+
+	#Web
+	-web merupakan kumpulan informasi yang tersedia dalam sebuah komputer yang terkoneksi secara terus menerus melalui internet
+	-web bisa berisi informasi dalam bentuk apapun, seperti teks, gambar, audio, video dan lain-lain
+	-web berjalan di aplikasi yang bernama web server, yaitu aplikasi yang digunakan untuk menyimpan dan menyampaikan isi informasi web
+
+	#Web Host
+	-pemilik web, biasanya tidak menjalankan aplikasi Web Server di komputer pribadi nya
+	-biasanya mereka akan menyewa komputer di tempat penyedia data center (kumpulan komputer) yang terjamin keandalan dan kecepatan koneksi internetnya
+	-pihak penyedia komputer untuk web server biasanya disebut web host
+
+	#Domain
+	-saat komputer web terhubung ke internet, biasanya dia memiliki alamat
+	-alamat ini bernama ip address, formatnya misal nya 172.217.194.94
+	-karena alamat ip address sangat menyulitkan untuk diingat
+	-untung saja ada yang namanya nama domain
+	-nama domain adalah alamat yang bisa digunakan sebagai alias ke ip address
+	-misal seperti google.co.id, blibli.com, dan lain-lain
+	-dengan nama domain, sebagai manusia kita akan mudah mengingat dibandingkan ip address
+	-namun, saat kita menggunakan nama domain, sebenarnya komputer tetap akan mengakses web menggunakan alamat ip address
+
+147.Client dan Server
+	-web adalah aplikasi berbasis Client dan Server, sekarang pertanyaannya, aapa itu Client dan Server?
+	-sederhananya client server merupakan konsep arsitektur aplikasi yang menghubungkan dua pihak, sistem client dan sistem server
+	-sistem client dan sistem server yang saling berkomunikasi melalui jaringan komputer, internet atau juga bisa di komputer yang sama
+
+	#Tugas Client dan Server
+	-aplikasi Client bertugas mengirim request ke Server, dan menerima response dari server
+	-sedangkan, aplikasi server bertugas menerima request dari Client, memproses data, dan mengembalikan hasil proses data ke Client
+
+	#Keuntungan Client dan Server
+	-perubahan aplikasi bisa dilakukan dengan mudah di server, tanpa harus membuat perubahan di client, aplikasi jika client nya di lokasi yang sulit dijangkau
+	-bisa digunakan oleh banyak client pada saat yang bersamaan, walaupun server tidak banyak
+	-bisa diakses dari mana saja, asal terhubung satu jaringan dengan server
+	
+	#Contoh Client dan Server
+	-web adalah salah satu contoh arsitektur client server
+	-aplikasi yang bertugas sebagai Client adalah Web Browser
+	-aplikasi yang bertugas sebagai Server adalah Web Server, dimana di dalam web server terdapat kode program Web kita
+
+148.Golang Web
+	-golang saat ini populer dijadikan salah satu pilihan bahasa pemrograman untuk membuat Web terutama Web API (backend)
+	-selain itu, di golang juga sudah disediakan package untuk membuat Web, bahkan di sertakan pula packagae untuk implementasi unit testing untuk Web
+	-hal ini menjadikan pembuatan Web menggunakan golang lebih mudah, karena tidak butuh menggunakan library atau framework
+
+	#Cara Kerja Golang Web
+	-Web Browser akan melakukan HTTP Request ke Web Server
+	-golang menerima HTTP Request, lalu mengeksekusi request tersebut sesuai dengan yang diminta
+	-setelah melakukan eksekusi request, golang akan mengembalikan data dan di render sesuai
+	 dengan kebutuhannya, misal HTML, CSS, JavaScript dan lain-lain
+	-golang akan mengembalikan content hasil render tersebut sebagai HTTP Response ke Web Browser
+	-web browser menerima content dari web server, lalu me-render content tersebut sesuai dengan tipe content nya
+
+	#Package net/http
+	-pada beberapa bahasa pemrograman lain, seperti java misalnya, untuk membuat web biasanya dibutuhkan tambahan library atau framework
+	-sedangkan di golang sudah disediakan package untuk membuat web bernama package net/http
+	-sehingga untuk membuat web menggunakan golang, kita tidak butuh lagi library tambahan, kita bisa menggunakan package yang sudah tersedia
+	-walaupun memang saat kita membuat web dalam skala besar, direkomendasikan menggunakan framework karena beberapa hal sudah dipermudah oleh web framework
+	-namun pada course ini, kita akan fokus menggunakan package net/http untuk membuat web nya. 
+	 karena semua framework web golang akan menggunakan net/http sebagai basis dasar framework nya
+	
+149.Sever
+	-server adalah sturct yang terdapat di package net/http yang digunakan sebagai representasi Web Server di golang
+	-untuk membuat web, kita wajib membuat server
+	-untuk membuat data server, ada beberapa hal yang perlu kita tentukan, seperti host dan juga port tempat dimana web kita berjalan
+	-setelah membuat server, kita bisa menjalankan server tersebut menggunakan function ListenAndServe()
+
+150.Handler
+	-server hanya bertugas sebagai web server, sedangkan untuk menerima http request yang masuk ke server, kita butugh yang namanya handler
+	-handler golang di representasikan dalam interface, dimana dalam kontraknya terdapat sebuah function bernama ServeHTTP() 
+	 yang digunakan sebagai function yang akan di eksekusi ketika menerima HTTP Request
+
