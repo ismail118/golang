@@ -833,3 +833,17 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-handler golang di representasikan dalam interface, dimana dalam kontraknya terdapat sebuah function bernama ServeHTTP() 
 	 yang digunakan sebagai function yang akan di eksekusi ketika menerima HTTP Request
 
+151.ServeMux
+	-saat membuat web, kita biasanya ingin membuat banyak sekali endpoint URL
+	-HandlerFunc sayangnya tidak mendukung itu
+	-alternative implementasi dari Handler adalah ServeMux
+	-ServeMux adalah implementasi Handler yang bisa mendukung multiple endpoint
+
+	#URL Pattern
+	-URL Pattern dalam ServeMux sederhana, kita tinggal menambahkan string yang ingin kita gunakan
+	 sebagai endpoint, tanpa perlu memasukan domain web kita
+	-jika URL Pattern dalam ServeMux kita tambahkan di akhirnya dengan garis miring, artinya semua url
+	 tersebut akan menerima path dengan awalan tersebut, misal /images/ artinya dieksekusi jika endpoint nya /images/,
+	 /images/contoh, /images/contoh/lagi
+	-namun jika terdapat URL Pattern yang lebih panjang, maka akan diprioritaskan yang lebih panjang,
+	 misal jika terdapat URL /images/ dan /images/thumbnails/, maka jika mengakses /images/thumbnails/ akan mengakses /images/thumbnails/, bukan /images
