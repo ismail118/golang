@@ -847,3 +847,8 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 /images/contoh, /images/contoh/lagi
 	-namun jika terdapat URL Pattern yang lebih panjang, maka akan diprioritaskan yang lebih panjang,
 	 misal jika terdapat URL /images/ dan /images/thumbnails/, maka jika mengakses /images/thumbnails/ akan mengakses /images/thumbnails/, bukan /images
+
+152.Request
+	-request adalah struct yang merepresentasikan HTTP Request yang dikirim oleh Web Browser
+	-semua informasi request yang dikirim bisa kita dapatkan di Request
+	-seperti URL, http method, http header, http body dan lain-lain
