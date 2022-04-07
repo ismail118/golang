@@ -932,4 +932,19 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-semua data status code juga sudah disediakan di golang, jika kita ingin, kita bisa gunakan variable yang sudah disediakan
 	doc https://github.com/golang/go/blob/master/src/net/http/status.go
 
+158.Cookie
+	#Stateless
+	-http merupakan stateless antara client dan server, artinya sever tidak akan menyimpan data apapun untuk mengingat setiap request dari client
+	-hal ini bertujuan agar mudah melakukan scalability di sisi server
+	-lantas bagaimana caranya agar server bisa mengingat sebuah client? misal ketika kita sudah login di website,
+	 server otomatis harus tau jika client tersebut sudah login, sehingga request selanjutnya, tidak perlu diminta untuk login lagi
+	-untuk melakukan hal ini, kita bisa memanfaatkan Cookie
 
+	#Cookie
+	-cookie adalah fitur di HTTP dimana server bisa memberi response cookie (key-value) dan client akan menyimpan cookie tersebut di web browser
+	-request selanjutnya, client akan selalu membawa cookie tersebut secara otomatis
+	-dan server secara otomatis akan selalu menerima data cookie yang dibawa oleh client setiap kalo client mengirim request
+
+	#Membuat Cookie
+	-cookie merupakan data yang dibuat di server dan sengaja agar disimpan di web browser
+	-untuk membuat cookie di server, kita bisa menggunakan function http.SetCookie()
