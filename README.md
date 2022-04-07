@@ -918,3 +918,18 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-namun sebelum kita bisa mengambil data di attribute PostForm, kita wajib memanggil method Request.ParseForm() terlebih dahulu,
 	 method ini di gunakan untuk melakukan parsing data body apakah bisa di parsing menjadi form data atau tidak,
 	 jika tidak bisa di parsing, maka akan menyebabkan error
+
+157.Response Code
+	-dalam HTTP, terdapat yang namanya response code
+	-Response Code merupakan representasi kode response
+	-dari response code ini kita bisa melihat apakah sebuah request yang kita kirim itu sukses diproses oleh server atau gagal
+	-ada banyak sekali response code yang bisa kita gunakan saat membuat web
+	 doc https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+	#Mengubah Response Code
+	-secara default, kika kita tidak menyebutkan response code, maka response code nya adalah 200 OK
+	-jika kita ingin mengubahnya, kita bisa menggunakan function ResponseWriter.WriteHeader(int)
+	-semua data status code juga sudah disediakan di golang, jika kita ingin, kita bisa gunakan variable yang sudah disediakan
+	doc https://github.com/golang/go/blob/master/src/net/http/status.go
+
+
