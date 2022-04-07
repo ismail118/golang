@@ -891,3 +891,18 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-caranya kita bisa menambahkan query parameter dengan nama yang sama, namun value berbeda,
 	 misal:
 	 name=eko&name=kurniawan
+
+155.Header
+	-selain query parameter, dalam HTTP, ada juga yang bernama header
+	-Header adalah informasi tambahan yang biasa dikirim dari client ke server atau sebaliknya
+	-jadi dalam header, tidak hanya ada pada HTTP Request, pada HTTP Response pun kita bisa menambahkan informasi header
+	-saat kita menggunakan browser, biasanya secara otomatis header akan ditambahkan oleh browser,
+	 seperti informasi browser, jenis tipe content yang dikirim dan diterima oleh browser, dan lain-lain
+
+	#Request Header
+	-untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request.Header
+	-Header mirip seperti Query Parameter, isinya adalah map[string][]stirng
+	-berbeda dengan Query Parameter yang case sensitive, secara spesfifikasi, Header key tidaklah case sensitive
+
+	#Response Header
+	-sedangkan jika kita ingin menambahkan header pada response, kita bisa menggunakan function ResponseWriter.Header()
