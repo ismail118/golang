@@ -868,3 +868,26 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	#httptest.NewRecorder()
 	-httptest.NewRecorder() merupakan function yang digunakan untuk membuat ResponseRecorder
 	-ResponseRecorder merupakan struct bantuan untuk merekam HTTP response dari hasil testing yang kita lakukan
+
+154.Query Parameter
+	-query parameter adalah salah satu fitur yang biasa kita gunakan ketika membuat web
+	-query parameter biasanya digunakan untuk mengirim data dari client ke server
+	-query parameter di tempatkan pada URL
+	-untuk menambahkan query parameter, kita bisa menggunakan ?nama=value pada URL nya
+
+	#url.URL
+	-dalam parameter Request, terdapat attribute URL yang berisi data dari URL
+	-dari data URL ini, kita bisa mengambil data query parameter yang dikirim dari clinet dengan menggunakan
+	 method Query() yang mengembalikan map
+
+	#Multiple Query Parameter
+	-dalam spesifikasi URL, kita bisa menambahkan lebih dari satu query parameter
+	-ini cocok sekali jika kita memang ingin mengirim banyak data ke server, cukup tambahkan query parameter lainnya
+	-untuk menambahkan query parameter, kita bisa gunakan tanda & lalu diikuti dengan query parameter berikutnya
+
+	#Multiple Value Query Parameter
+	-sebenarnya URL melakukan parsing query parameter dan menyimpannya dalam map[string][]string
+	-artinya dalam satu key query parameter, kita bisa memasukan beberapa value
+	-caranya kita bisa menambahkan query parameter dengan nama yang sama, namun value berbeda,
+	 misal:
+	 name=eko&name=kurniawan
