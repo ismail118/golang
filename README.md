@@ -852,3 +852,19 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-request adalah struct yang merepresentasikan HTTP Request yang dikirim oleh Web Browser
 	-semua informasi request yang dikirim bisa kita dapatkan di Request
 	-seperti URL, http method, http header, http body dan lain-lain
+
+153.HTTP Test
+	-golang sudah menyediakan package khusus untuk membuat unit test terhadap fitur web yang kita buat
+	-semuanya ada di dalam package net/http/httptest
+	 doc https://pkg.go.dev/net/http/httptest
+	-dengan menggunakan package ini, kita bisa melakukan testing handler web di golang tanpa harus menjalankan aplikasi web nya
+	-kita bisa langsung fokus terhadap handler function yang ingin kita test
+
+	#httptest.NewRequest()
+	-NewRequest(method, url, body) merupakan function yang digunakan untuk membuat http.Request
+	-kita bisa menentukan method, url dan body yang akan kita kirim sebagai simulasi unit test
+	-selain itu, kita juga bisa menambahkan informasi tambahan lainnya pada request yang ingin kita kirim, seperti header, dan lain-lain
+
+	#httptest.NewRecorder()
+	-httptest.NewRecorder() merupakan function yang digunakan untuk membuat ResponseRecorder
+	-ResponseRecorder merupakan struct bantuan untuk merekam HTTP response dari hasil testing yang kita lakukan
