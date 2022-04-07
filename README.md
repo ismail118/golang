@@ -906,3 +906,15 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 
 	#Response Header
 	-sedangkan jika kita ingin menambahkan header pada response, kita bisa menggunakan function ResponseWriter.Header()
+
+156.Form Post
+	-saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST
+	-jika menggunakan method GET, maka hasilnya semua data di form akan menjadi query parameter
+	-sedangkan jika menggunakan POST, maka semua data di form akan dikirim via body HTTP Request
+	-di golang untuk mengambil data Form Post sangatlah mudah
+
+	#Request.PostForm
+	-semua data form post yang dikirim dari client, secara otomatis akan disimpan dalam attribute Request.PostForm
+	-namun sebelum kita bisa mengambil data di attribute PostForm, kita wajib memanggil method Request.ParseForm() terlebih dahulu,
+	 method ini di gunakan untuk melakukan parsing data body apakah bisa di parsing menjadi form data atau tidak,
+	 jika tidak bisa di parsing, maka akan menyebabkan error
