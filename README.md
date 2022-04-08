@@ -973,3 +973,8 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-kenapa ini terjadi? hal ini karena di golang embed, nama folder ikut menjadi nama resource nya,
 	 misal resources/index.js, jadi mengaksesnya kita perlu gunakan URL /static/resources/index.js
 	-jika kita ingin langsung mengakses file index.js tanpa menggunakan resources, kita bisa menggunakan function fs.Sub() untuk mendapatkan sub directory
+
+160.Serve File
+	-kadang ada kasus misal kita hanya ingin menggunakan static file sesuai dengan yang kita inginkan
+	-hal ini bisa dilakukan menggunakan function http.ServeFile()
+	-dengan menggunakan function ini, kita bias menentukan file mana yang ingin kita tulis ke http response
