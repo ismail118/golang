@@ -978,3 +978,43 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-kadang ada kasus misal kita hanya ingin menggunakan static file sesuai dengan yang kita inginkan
 	-hal ini bisa dilakukan menggunakan function http.ServeFile()
 	-dengan menggunakan function ini, kita bias menentukan file mana yang ingin kita tulis ke http response
+
+	#Golang Embed
+	-parameter function http.ServeFile hanya berisi string file name, sehingga tidak bisa menggunakan golang embed
+	-namun bukan berarti kita tidak bisa menggunakan golang embed, karena jika untuk melakukan load file, kita hanya butuh menggunakan package fmt dan ResponseWriter saja
+
+161.Template
+	#Web Dinamis
+	-sampai saat ini kita hanya membahas tentang response menggunakan String dan juga static file
+	-pada kenyataannya saat kita membuat web, kita pasti akan membuat halaman yang dinamis, bisa berubah-ubah sesuai dengan data yang diakses oleh user
+	-di golang terdapat fitur HTML Template, yaitu fitur template yang bisa kita gunakan untuk membuat HTML yang dinamis
+
+	#HTML Template
+	-fitur HTML template terdapat di package html/template
+	-sebelum menggunakan HTML template, kita perlu terlebih dahulu membuat template nya
+	-template bisa berupa file atau string
+	-bagian dinamis pada HTML Template, adalah bagian yang menggunakan tanda {{ }}
+
+	#Membuat Template
+	-saat membuat template dengan string, kita perlu memberi tahu nama template nya
+	-dan untuk membuat text template, cukup buat text html, dan untuk konten yang dinamis, kita bisa gunakan tanda {{.}} contoh
+	 
+	#Template Dari File
+	-selain membuat template dari string, kita juga bisa membuat template langsung dari file
+	-hal ini mempermudah kita, karena bisa langsung membuat file html
+	-saat membuat template menggunakan file, secara otomatis nama file akan menjadi nama templatenya, misal jika kita punya file simple.html,
+	 maka nama templatenya adalah simple.html
+
+	#Template Directory
+	-kadang biasanya kita jarang sekali menyebutkan file template satu persatu
+	-alangkah baiknya untuk template kita simpan di satu directory
+	-golang template mendukung proses load template dari directory
+	-hal ini memudahkan kita, sehingga tidak perlu menyebutkan nama file nya satu persatu
+
+	#Template dari golang embed
+	-sejak golang 1.16 karena sudah ada golang embed, jadi direkomendasikan menggunakan golang embed untuk menyimpan data template
+	-menggunakan golang embed menjadi kita tidak perlu ikut meng-copy template file lagi, karena sudah otomatis di embed di dalam distribution file
+
+
+
+
