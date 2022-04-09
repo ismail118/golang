@@ -1015,6 +1015,10 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-sejak golang 1.16 karena sudah ada golang embed, jadi direkomendasikan menggunakan golang embed untuk menyimpan data template
 	-menggunakan golang embed menjadi kita tidak perlu ikut meng-copy template file lagi, karena sudah otomatis di embed di dalam distribution file
 
-
+162.Template Data
+	-saat kita membuat template, kadang kita ingin menambahkan banyak data dinamis
+	-hal ini bisa kita lakukan dengan cara menggunakan data struct atau map
+	-namun perlu di lakukan perubahan di dalam text templatenya, kita perlu memberi tahu Field atau Key mana yang akan kita gunakan untuk mengisi data dinamis di template
+	-kita bias menyebutkan dengan cara seperti ini {{.NamaField}}
 
 
