@@ -1057,3 +1057,21 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-di template terdapat action with, yang bisa digunakan mengubah scope dot menjadi object yang kita mau
 	-{{with.Value}}T1{{end}}, jika value tidak kosong, di T1 semua dot akan merefer ke value
 	-{{with.Value}}T1{{else}}T2{{end}}, sama seperti sebelumnya, namun jika value kosong, maka T2 yang akan dieksekusi
+
+164.Template Layout
+	-saat kita membuat halaman website, kadang ada beberapa bagian yang selalu sama, misal header dan footer
+	-best practice nya jika terdapat bagian yang selalu sama, disarankan untuk disimpan pada template yang terpisah,
+	 agar bisa digunakan di template lain
+	-golang template mendukung import dari template lain
+
+	#Import Template
+	Untuk melakukan import, kita bisa menggunakan perintah berikut:
+	-{{template "nama"}}, artinya kita akan meng-import template "nama" tanpa memberikan data apapun
+	-{{template "nama".Value}}, artinya kita akan mengimport template "nama" dengan memberikan data value
+
+	#Template Name
+	-saat kita membuat template dari filem secara otomatis nama file yang akan menjadi nama template
+	-namun jika kita ingin mengubah nama template nya, kita juga bisa menlakukannya menggunakan perintah {{define "nama"}}Template{{end}},
+	 artinya kita membuat template dengan nama "nama" 
+
+	NOTE:DIREKOMENDASIKAN MENGGUNAKAN .gohtml SEBAGAI PENGGANTI .html AGAR TIDAK ERROR
