@@ -1021,4 +1021,39 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-namun perlu di lakukan perubahan di dalam text templatenya, kita perlu memberi tahu Field atau Key mana yang akan kita gunakan untuk mengisi data dinamis di template
 	-kita bias menyebutkan dengan cara seperti ini {{.NamaField}}
 
+163.Template Action
+	-golang template mendukung perintah action, seperti percabangan, perulangan dan lain-lain
 
+	#If Else
+	-{{if.Value}}T1{{end}} ,jika Valu tidak kosong, maka T1 akan dieksekusi, jika kosong, tiada ada yang dieksekusi
+	-{{if.Value}}T1{{else}}T2{{end}} ,jika value tidak kosong, maka T1 akan dieksekusi, jika kosong, T2 yang akan dieksekusi
+	-{{if.Value1}}T1{{else if.Value2}}T2{{else}}T3{{end}}, jika Value1 tidak kosong, maka T1 akan dieksekusi, jika Value2 tidak kosong, maka T2 akan dieksekusi,
+	 jika tidak semuanya, maka T3 akan dieksekusi
+
+	#Operator Perbandingan
+	Golang template juga mendukung operator perbandingan, ini cocok ketika butuh melakukan perbandingan number di if statement, berikut adalah operator nya:
+	- rq artinya arg1 == arg2
+	- ne artinya arg1 != arg2
+	- lt artinya arg1 < arg2
+	- le artinya arg1 <= arg2
+	- gt artinya arg1 > arg2
+	- ge artinya arg1 >= arg2
+
+	#Kenapa Operatornya di Depan?
+	-hal ini dikarenakan, sebenarnya operator perbandingan tersebut adalah sebuah function
+	-jadi saat kita menggunakan {{eq First Second}}, sebenarnya dia akan memanggil function eq dengan parameter First dan Second: eq(First, Second)
+
+	#Range
+	-range digunakan untuk melakukan iterasi data template
+	-tidak ada perulangan biasa seperti menggunakan gor di golang template
+	-yang kita bisa lakukan adalah menggunakan range untuk mengiterasi tiap data array, slice, map atau channel
+	-{{range $index, $element := .Value}}T1{{end}}, jika value memiliki data, maka T1 akan dieksekusi sebanyak element value,
+	 dan kita bisa menggunakan $index untuk mengakses index dan $element untuk mengakses elemet
+	-{{range $index, $element := .Value}}T1{{else}}T2{{end}}, sama seperti sebelumnya, namun jika value tidak memiliki element apapun, maka T2 yang akan dieksekusi
+
+	#With
+	-kadang kita sering membuat nested struct
+	-jika menggunakan template, kita bisa mengaksesnya menggunakan .Value.NestedValue
+	-di template terdapat action with, yang bisa digunakan mengubah scope dot menjadi object yang kita mau
+	-{{with.Value}}T1{{end}}, jika value tidak kosong, di T1 semua dot akan merefer ke value
+	-{{with.Value}}T1{{else}}T2{{end}}, sama seperti sebelumnya, namun jika value kosong, maka T2 yang akan dieksekusi
