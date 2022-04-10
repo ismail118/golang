@@ -1100,3 +1100,9 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 {{ sayHello .Name | upper }}, artinya akan memanggil global function sayHello(Name) hasil dari sayHello(Name) akan dikirim ke function upper(hasil)
 	-kita bisa menambahkan function pipelines lebih dari satu
 
+166.Template Caching
+	-kode-kode diatas yang sudah kita prakterkan sebenarnya tidak efisient
+	-hal ini dikarenakan, setiap Handler dipanggil, kita selalu melakukan parsing ulang templatenya
+	-idealnya template hanya melakukan parsing satu kali diawal ketika aplikasinya berjalan
+	-selanjutnya data template akan di caching (disimpan di memory), shingga kita tidak perlu melakukan parsing lagi
+	-hal ini akan membuat web kita semakin cepat
