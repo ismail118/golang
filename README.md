@@ -1141,4 +1141,13 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-kita hanya perlu membuat response code 3xx dan menambah header location
 	-namun untungnya di golang, ada function yang bisa kita gunakan untuk mempermudah ini
 	
-	
+169.Upload File
+	-saat membuat web, selain menerima input data berupa form dan query param, kadang kita juga menerima input data berupa file dari client
+	-golang web sudah memiliki fitur untuk management upload file
+	-hal ini memudahkan kita ketika butuh membuat web yang menerima input file upload
+
+	#MultiPart
+	-saat kita ingin menerima upload file, kita perlu melakukan parsing terlebih dahulu menggunakan Request.ParseMultipartForm(size),
+	 atau kita bisa langsung ambil data file nya menggunakan Request.FormFile(name), di dalamnya secara otomatis melakukan parsing terlebih dahulu
+	-hasilnya merupakan data-data yang terdapat pada package multipart, seperti multipart.File
+	 sebagai representasi file nya, dan multipart.FileHeader sebagai informasi file nya
