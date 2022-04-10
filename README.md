@@ -1133,5 +1133,12 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-saat kita mematikan fitur auto escape, bisa dipastikan masalah XSS akan mengintai kita
 	-jadi pastikan kita benar-benar percaya terhadap sumber data yang kita matikan auto escapenya
 
+168.Ridirect
+	-saat kita membuat website, kadang kita butuh melakukan redirect
+	-misal setelah selesai login, kita lakukan redirect ke halaman dashboard
+	-redirect sendiri sebenarnya sudah standard di HTTP
+	 doc https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections
+	-kita hanya perlu membuat response code 3xx dan menambah header location
+	-namun untungnya di golang, ada function yang bisa kita gunakan untuk mempermudah ini
 	
 	
