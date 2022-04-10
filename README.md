@@ -1075,3 +1075,28 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 artinya kita membuat template dengan nama "nama" 
 
 	NOTE:DIREKOMENDASIKAN MENGGUNAKAN .gohtml SEBAGAI PENGGANTI .html AGAR TIDAK ERROR
+
+165.Template Function
+	-selain mengakses field, dalam template, function juga bisa diakses
+	-cara mengakses function sama seperti mengakses field, namun jika function tersebut memiliki parameter,
+	 kita bisa gunakan tambahan parameter ketika memanggil function di template nya
+	-{{.FunctionName}}, memanggil field FunctionName atau FunctionName()
+	-{{.FunctionName "eko","Kurniawan"}}, memanggil function FunctionName("eko", "Kurniawan")
+
+	#Global Function
+	-golang template memiliki beberapa global function
+	-global function adalah function yang bisa digunakan secara langsung, tanpa menggunakan template data
+	-berikut adalah beberapa global function di golang template
+	 https://github.com/golang/go/blob/master/src/text/template/funcs.go
+
+	#Menambah Global Function
+	-kita juga bisa menambah global function
+	-untuk menambah global function, kita bisa menggunakan method Funcs pada template
+	-perlu di ingat, bahwa menambahkan global function harus dilakukan sebelum melakukan parsing template
+
+	#Function Pipelines
+	-golang template mendukung function pipelines, artinya hasil dari function bisa dikirim ke function berikutnya
+	-untuk menggunakan function pipelines, kita bisa menggunakan tanda | ,misal:
+	 {{ sayHello .Name | upper }}, artinya akan memanggil global function sayHello(Name) hasil dari sayHello(Name) akan dikirim ke function upper(hasil)
+	-kita bisa menambahkan function pipelines lebih dari satu
+
