@@ -1156,4 +1156,17 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-selain upload file, kadang kita ingin membuat halaman website yang digunakan untuk download sesuatu
 	-sebenarnya di golang sudah disediakan menggunakan FileServer dan ServeFile
 	-dan jika kita ingin memaksa file di download (tanpa di render oleh browser, kita bisa menggunakan header Content-Disposition)
-	 doc https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition 
+	 doc https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
+
+171.Middleware
+	-dalam pembuatan web, ada konsep yang bernama middleware atau filter atau interceptor
+	-middleware adalah fitur dimana kita bisa menambahkan kode sebelum dan setelah sebuah handler di eksekusi
+
+	#Middleware di golang web
+	-sayangnya, di golang tidak ada middleware
+	-namun karena struktur handler menggunakan interface, kita bisa membuat middleware sendiri menggunakan handler
+
+	#Error Handler
+	-kadang middleware juga bisa digunakan untuk melakukan error handler
+	-hal ini sehingga jika terjadi panic di Handler, kita bisa melakukan recover di middleware, dan mengubah panic tersebut menjadi error response
+	-dengan ini, kita bisa menjaga aplikasi kita tidak berhenti berjalan
