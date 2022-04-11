@@ -1151,3 +1151,9 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 atau kita bisa langsung ambil data file nya menggunakan Request.FormFile(name), di dalamnya secara otomatis melakukan parsing terlebih dahulu
 	-hasilnya merupakan data-data yang terdapat pada package multipart, seperti multipart.File
 	 sebagai representasi file nya, dan multipart.FileHeader sebagai informasi file nya
+
+170.Download File
+	-selain upload file, kadang kita ingin membuat halaman website yang digunakan untuk download sesuatu
+	-sebenarnya di golang sudah disediakan menggunakan FileServer dan ServeFile
+	-dan jika kita ingin memaksa file di download (tanpa di render oleh browser, kita bisa menggunakan header Content-Disposition)
+	 doc https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition 
