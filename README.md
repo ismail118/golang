@@ -1196,8 +1196,20 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	go get github.com/julienschmidt/httprouter
 	go get github.com/stretchr/testify
 
+176.Router
+	-inti dari library HttpRouter adalah struct Router
+	-Router ini merupakan implementasi dari http.Handler, sehingga kita bisa dengan mudah menambahkan ke dalam http.Server
+	-untuk membuat Router, kita bisa menggunakan function httprouter.New(), yang akan mengembalikan Router pointer
 
+	#HTTP Method
+	-router mirip seperti ServeMux, dimana kita bisa menambahkan route ke dalam Router
+	-kelebihan dibandingkan dengan ServeMux adalah, pada Router, kita bisa menentukan HTTP Method yang ingin kita gunakan, misal GET, POST, PUT dan lain-lain
+	-cara menambahkan route ke dalam Router adalah gunakan function yang sama dengan HTTP Method nya, misal router.GET(), router.POST() dan lain-lain
 
+	#httprouter.Handle
+	-saat kita menggunakan ServeMux, ketika menambah route, kita bisa menambahkan http.Handler
+	-berbeda dengan Router, pada Router kita tidak menggunakan http.Handler lagi, melainkan menggunakan type httprouter.Handle
+	-perbedaan dengan http.Handler adalah pada httprouter.Handle, terdapat parameter ke tiga yaitu Params, yang akan kita bahas nanti di chapter tersendiri
 
 
 go get github.com/julienschmidt/httprouter
