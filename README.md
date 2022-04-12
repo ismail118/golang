@@ -1211,6 +1211,16 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-berbeda dengan Router, pada Router kita tidak menggunakan http.Handler lagi, melainkan menggunakan type httprouter.Handle
 	-perbedaan dengan http.Handler adalah pada httprouter.Handle, terdapat parameter ke tiga yaitu Params, yang akan kita bahas nanti di chapter tersendiri
 
+177.Params
+	-httprouter.Handle memiliki parameter yang ketiga, yaitu Params, untuk apa kegunaan Params?
+	-params merupakan tempat untuk menyimpan parameter yang dikirim dari client
+	-namun Params ini bukan query parameter, melainkan parameter di URL
+	-kadang kita butuh membuat URL yang tidak fix, alias bisa berubah-ubah, misal /product/1, /product/2 dan seterusnya
+	-ServeMux tidak mendukung hal tersebut, namun Router mendukung hal tersebut\
+	-parameter yang dinamis yang terdapat di URL, secara otomatis dikumpulkan di Params
+	-namun, agar Router tahu, kita harus memberi tahu ketika menambahkan Route, dibagian mana kita akan buat URL path nya menjadi dinamis
+
+
 
 go get github.com/julienschmidt/httprouter
 go get github.com/stretchr/testify
