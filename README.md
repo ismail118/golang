@@ -1220,6 +1220,30 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-parameter yang dinamis yang terdapat di URL, secara otomatis dikumpulkan di Params
 	-namun, agar Router tahu, kita harus memberi tahu ketika menambahkan Route, dibagian mana kita akan buat URL path nya menjadi dinamis
 
+178.Router Pattern
+	-sekarang kita sudah tahu bahwa dengan menggunakan Router, kita bisa menambah params di URL
+	-sekarang pertanyaannya, bagaimana pattern (pola) pembuatan parameter nya?
+
+	#Named Parameter
+	-named parameter adalah pola pembuatan parameter dengan menggunakan nama
+	-setiap nama parameter harus diawali dengan :(titik dua), lalu dikuti dengan nama paramter
+	-contoh, jika kita memilki pattern seperti ini:
+	 Pattern 		---> 	/user/:user
+	 /user/eko			match
+	 /user/you			match
+	 /user/eko/profile	no match
+	 /user/			no match
+
+	#Catch All Parameter
+	-selain named parameter, ada juga yang bernama catch all parameter, yaitu menangkap semua parameter
+	-catch all parameter harus diawali dengan * (bintang), lalu diikuti dengan nama parameter
+	-catch all parameter harus berbeda di posisi akhir URL	
+	 Pattern		--->	/src/*filepath
+	 /src/			no match
+	 /src/somefile		match
+	 /src/subdir/somefile	match
+
+	
 
 
 go get github.com/julienschmidt/httprouter
