@@ -1170,3 +1170,36 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-kadang middleware juga bisa digunakan untuk melakukan error handler
 	-hal ini sehingga jika terjadi panic di Handler, kita bisa melakukan recover di middleware, dan mengubah panic tersebut menjadi error response
 	-dengan ini, kita bisa menjaga aplikasi kita tidak berhenti berjalan
+
+172.Routing Library
+	-walaupun golang sudah menyediakan ServeMux sebagai handler yang bisa menghandle beberapa endpoint atau istilahnya adalah routing
+	-tapi kebanyakan programmer golang biasanya akan menggunakan library untuk melakukan routing
+	-hal ini dikarenakan ServeMux tidak memiliki advance fitur seperti path variable, auto binding parameter dan middleware
+	-banyak alternatif lain yang bisa kita gunakan untuk library routing selain ServeMux
+
+	#Tutorial Routing Library
+	-tutorial routing library tidak akan dibahas di course ini
+	-course ini hanya fokus ke standard http package golang
+	-routing library akan dibahas di course terpisah
+	
+#Bagian 9 (Golang HttpRouter)
+
+174.Pendahuluan
+
+175.Pengenalan HttpRouter
+	-HttpRouter merupakan salah satu OpenSource Library yang populer untuk Http Handler di golang
+	-HttpRouter terkenal dengan kecepatannya dan juga sangat minimalis
+	-hal ini dikarenakan HttpRouter hanya memiliki fitur untuk routing saja, tidak memiliki fitur apapun selain itu
+	doc https://github.com/julienschmidt/httprouter
+
+	#Perintah Menambah Library HttpRouter ke Project
+	go get github.com/julienschmidt/httprouter
+	go get github.com/stretchr/testify
+
+
+
+
+
+go get github.com/julienschmidt/httprouter
+go get github.com/stretchr/testify
+
