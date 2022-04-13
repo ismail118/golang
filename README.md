@@ -1237,15 +1237,23 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	#Catch All Parameter
 	-selain named parameter, ada juga yang bernama catch all parameter, yaitu menangkap semua parameter
 	-catch all parameter harus diawali dengan * (bintang), lalu diikuti dengan nama parameter
-	-catch all parameter harus berbeda di posisi akhir URL	
+	-catch all parameter harus berbeda di posisi akhir URL
 	 Pattern		--->	/src/*filepath
 	 /src/			no match
 	 /src/somefile		match
 	 /src/subdir/somefile	match
 
-	
+179.Serve File
+	-pada materi golang web, kita sudah pernah membahas tentang Serve File
+	-pada Router pun, mendukung serve static file menggunakan function ServeFile(Path.FileSystem)
+	-dimana pada Path, kita harus menggunakan Catch All Parameter
+	-sedangkan pada FileSystem kita bisa melakukan manual load dari folder atau menggunakan golang embed, 
+	 seperti yang pernah kita bahas di materi golang web
+
+	#
 
 
 go get github.com/julienschmidt/httprouter
 go get github.com/stretchr/testify
+
 
