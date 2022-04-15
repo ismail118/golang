@@ -1259,6 +1259,15 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	 kita harus membuat Middleware khusus secara manual
 	-namun di Router, sudah disediakan untuk menangani panic, caranya dengan menggunakan attribute PanicHandler : func(http.ResponseWriter, *http.Request, interface{})
 
+181.Not Found Handler
+	-selain panic handler, Router juga memiliki not found handler
+	-not found handler adalah yang dieksekusi ketika client mencoba melakukan request URL yang memang tidak terdapat di Router
+	-secara default, jika tidak ada router yang tidak ditemukan, Router akan melanjutkan request ke http.NotFound, namun kita bisa mengubahnya
+	-caranya dengan mengubah router.NotFound = http.Handler
+
+
+
+
 
 go get github.com/julienschmidt/httprouter
 go get github.com/stretchr/testify
