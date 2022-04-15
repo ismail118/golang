@@ -1250,7 +1250,14 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-sedangkan pada FileSystem kita bisa melakukan manual load dari folder atau menggunakan golang embed, 
 	 seperti yang pernah kita bahas di materi golang web
 
-	#
+180.Panic Handler
+	-apa yang terjadi jika terjadi panic pada logic Handler yang kita buat?
+	-secara otomatis akan terjadi error, dan web akan berhenti mengembalikan response
+	-kadang saat terjadi panic, kita ingin melakukan sesuatu, misal memberitahu jika terjadi kesalahan di web,
+	 atau bahkan mengirim informasi log kesalahan yang terjadi
+	-sebelumnya, seperti yang sudah kita bahas di materi golang web, jika kita ingin menangani panic,
+	 kita harus membuat Middleware khusus secara manual
+	-namun di Router, sudah disediakan untuk menangani panic, caranya dengan menggunakan attribute PanicHandler : func(http.ResponseWriter, *http.Request, interface{})
 
 
 go get github.com/julienschmidt/httprouter
