@@ -1265,6 +1265,12 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-secara default, jika tidak ada router yang tidak ditemukan, Router akan melanjutkan request ke http.NotFound, namun kita bisa mengubahnya
 	-caranya dengan mengubah router.NotFound = http.Handler
 
+182.Method Not Allowed Handler
+	-saat menggunakan ServeMux, kita tidak bisa menentukan HTTP Method apa yang digunakan untuk Handler
+	-Namun pada Router, kita bisa menentukan HTTP Method yang ingin kita gunakan, lantas apa yang terjadi jika client tidak mengirim HTTP Method sesuai dengan yang kita tentukan?
+	-maka akan terjadi error Method Not Allowed
+	-secara default, jika terjadi error seperti ini, maka Router akan memanggil function http.Error
+	-jika kita ingin mengubahnya, kita bisa gunakan router.MethodNotAlloed = http.Handler
 
 
 
