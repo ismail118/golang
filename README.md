@@ -1277,9 +1277,22 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-Dan karena Router merupakan implementasi dari http.Handler, jadi untuk middleware, kita bisa membuat sendiri,
 	 seperti yang sudah kita bahas pada course golang web
 
-
-
 go get github.com/julienschmidt/httprouter
 go get github.com/stretchr/testify
 
+#Bagian 10 (Golang JSON)
+
+186.Pengenalan Package JSON
+	-JSON singkatan dari JavaScript Object Notation, merupakan struktur format data yang bentuknya seperti Object di JavaScript
+	-JSON merupakan struktur format data yang paling banyak digunakan saat kita membuat RESTful API
+	-Dan pate kelas ini kita akan menggunakan JSON juga
+	 https://www.json.org/json-en.html 
+
+	#Package JSON
+	-Go-Lang sudah menyediakan package json, dimana kita bisa menggunakan package ini untuk melakukan konversi data ke JSON (encode) atau sebaliknya (decode)
+	 https://pkg.go.dev/encoding/json 
+
+187.Encoding JSON
+	-Go-Lang telah menyediakan function untuk melakukan konversi data ke JSON, yaitu menggunakan function json.Marshal(interface{})
+	-Karena parameter nya adalah interface{}, maka kita bisa masukan tipe data apapun ke dalam function Marshal
 
