@@ -1272,6 +1272,10 @@ VALUES ('budi', 'BUDI', 'budi@gmail.com', 100000, 5.0, '1999-9-9', true),('eko',
 	-secara default, jika terjadi error seperti ini, maka Router akan memanggil function http.Error
 	-jika kita ingin mengubahnya, kita bisa gunakan router.MethodNotAlloed = http.Handler
 
+183.Middleware
+	-HttpRouter hanyalah library untuk http router saja, tidak ada fitur lain selain router
+	-Dan karena Router merupakan implementasi dari http.Handler, jadi untuk middleware, kita bisa membuat sendiri,
+	 seperti yang sudah kita bahas pada course golang web
 
 
 
