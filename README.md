@@ -1296,3 +1296,21 @@ go get github.com/stretchr/testify
 	-Go-Lang telah menyediakan function untuk melakukan konversi data ke JSON, yaitu menggunakan function json.Marshal(interface{})
 	-Karena parameter nya adalah interface{}, maka kita bisa masukan tipe data apapun ke dalam function Marshal
 
+188.JSON Object
+	-Pada materi sebelumnya kita melakukan encode data seperti string, number, boolean, dan tipe data primitif lainnya
+	-Walaupun memang bisa dilakukan, karena sesuai dengan kontrak interface{}, namun tidak sesuai dengan kontrak JSON
+	-Jika mengikuti kontrak json.org, data JSON bentuknya adalah Object dan Array
+	-Sedangkan value nya baru berupa
+
+	#Struct
+	-JSON Object di Go-Lang direpresentasikan dengan tipe data Struct
+	-Dimana tiap attribute di JSON Object merupakan attribute di Struct
+
+189.Decode JSON
+	-Sekarang kita sudah tahu bagaimana caranya melakukan encode dari tipe data di Go-Lang ke JSON
+	-Namun bagaimana jika kebalikannya?
+	-Untuk melakukan konversi dari JSON ke tipe data di Go-Lang (Decode), kita bisa menggunakan function json.Unmarshal(byte[], interface{})
+	-Dimana byte[] adalah data JSON nya, sedangkan interface{} adalah tempat menyimpan hasil konversi, biasa berupa pointer
+
+
+
