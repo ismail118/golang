@@ -1312,5 +1312,23 @@ go get github.com/stretchr/testify
 	-Untuk melakukan konversi dari JSON ke tipe data di Go-Lang (Decode), kita bisa menggunakan function json.Unmarshal(byte[], interface{})
 	-Dimana byte[] adalah data JSON nya, sedangkan interface{} adalah tempat menyimpan hasil konversi, biasa berupa pointer
 
+190.JSON Array
+	-Selain tipe dalam bentuk Object, biasanya dalam JSON, kita kadang menggunakan tipe data Array
+	-Array di JSON mirip dengan Array di JavaScript, dia bisa berisikan tipe data primitif, atau tipe data kompleks (Object atau Array)
+	-Di Go-Lang, JSON Array direpresentasikan dalam bentuk slice
+	-Konversi dari JSON atau ke JSON dilakukan secara otomatis oleh package json menggunakan tipe data slice
+
+	#Decode JSON Array
+	-Selain menggunakan Array pada attribute di Object
+	-Kita juga bisa melakukan encode atau decode langsung JSON Array nya
+	-Encode dan Decode JSON Array bisa menggunakan tipe data Slice
+
+191.JSON Tag
+	-Secara default atribut yang terdapat di Struct dan JSON akan di mapping sesuai dengan nama atribut  yang sama (case sensitive)
+	-Kadang ada style yang berbeda antara penamaan atribute di Struct dan di JSON, misal di JSON kita ingin menggunakan snake_case, tapi di Struct, kita ingin menggunakan PascalCase
+	-Untungnya, package json mendukun Tag Reflection
+	-Kita bisa menambahkan tag reflection dengan nama json, lalu diikuti dengan atribut yang kita inginkan ketika konversi dari atau ke JSON
+
+
 
 
