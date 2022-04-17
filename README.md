@@ -1338,6 +1338,15 @@ go get github.com/stretchr/testify
 	-Namun karena value berupa interface{}, maka kita harus lakukan konversi secara manual jika ingin mengambil value nya
 	-Dan tipe data Map tidak mendukung JSON Tag lagi
 
+193.Streaming Decoder
+	-Sebelumnya kita belajar package json dengan melakukan konversi data JSON yang sudah dalam bentuk variable dan data string atau []byte
+	-Pada kenyataanya, kadang data JSON nya berasal dari Input berupa io.Reader (File, Network, Request Body)
+	-Kita bisa saja membaca semua datanya terlebih dahulu, lalu simpan di variable, baru lakukan konversi dari JSON, namun hal ini sebenarnya tidak perlu dilakukan, karena package json memiliki fitur untuk membaca data dari Stream
+
+	#json.Decoder
+	-Untuk membuat json Decoder, kita bisa menggunakan function json.NewDecoder(reader)
+	-Selanjutnya untuk membaca isi input reader dan konversikan secara langsung ke data di Go-Lang, cukup gunakan function Decode(interface{})
+
 	
 
 
