@@ -1347,6 +1347,15 @@ go get github.com/stretchr/testify
 	-Untuk membuat json Decoder, kita bisa menggunakan function json.NewDecoder(reader)
 	-Selanjutnya untuk membaca isi input reader dan konversikan secara langsung ke data di Go-Lang, cukup gunakan function Decode(interface{})
 
+194.Streaming Encoder
+	-Selain decoder, package json juga mendukung membuat Encoder yang bisa digunakan untuk menulis langsung JSON nya ke io.Writer
+	-Dengan begitu, kita tidak perlu menyimpan JSON datanya terlebih dahulu ke dalam variable string atau []byte, kita bisa langsung tulis ke io.Writer
+
+	#json.Encoder
+	-Untuk membuat Encoder, kita bisa menggunakan function json.NewEncoder(writer)
+	-Dan untuk menulis data sebagai JSON langsung ke writer, kita bisa gunakan function Encode(interface{})
+
+
 	
 
 
