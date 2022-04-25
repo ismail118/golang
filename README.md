@@ -1355,8 +1355,97 @@ go get github.com/stretchr/testify
 	-Untuk membuat Encoder, kita bisa menggunakan function json.NewEncoder(writer)
 	-Dan untuk menulis data sebagai JSON langsung ke writer, kita bisa gunakan function Encode(interface{})
 
+#Bagian 2 (Golang RESTful API)
+#Summary
+Disini kita akan belajar urutan tata cara membuat RESTful API yang baik dan benar:
+*Membuat Open API (API Specification)
+ fungsinya untuk dokumentasi dan spesifikasi api yang akan di buat dan juga bisa untuk api kontrak untuk memudahkan Front End,
+ open api berbentuk file json dan bisa di privew menggunakan library Swagger
 
-	
+197.Setup Project
+	Name Project : belajar-golang-restful-api
+	Name Modules : kursus/belajar-golang-restful-api
 
+	#Aplikasi CRUD Sederhana
+	-Kita akan membuat aplikasi CRUD sederhana
+	-Tujuannya untuk belajar RESTful API, bukan untuk membuat aplikasi
+	-Kita akan membuat aplikasi CRUD untuk data category
+	-Dimana data category memiliki atribut id (number) dan name (string)
+	-Kita akan buat API untuk semua operasi nya, Create Category, Get Category, List Category, Update Category dan Delete Category
+	-Semua API akan kita tambahkan Authentication berupa API-Key
 
+	#Menambah Dependency
+	-Driver MySQL : https://github.com/go-sql-driver/mysql
+	 go get github.com/go-sql-driver/mysql
+	-HTTP Router : https://github.com/julienschmidt/httprouter
+	 go get github.com/julienschmidt/httprouter
+	-Validation : https://github.com/go-playground/validator
+	 go get github.com/go-playground/validator
 
+198.Membuat OpenAPI
+	apispec.json
+	kilik kanan --> new --> OpenAPI Specification
+
+199.API Spec List Categories
+
+200.API Spec Create Category
+
+201.API Spec Get Category
+
+202.API Spec Update Category
+
+203.API Spec Delete Category
+
+204.API Spec Security
+
+205.Membuat Database
+Query:
+create database belajar_golang_restful_api;
+use belajar_golang_restful_api;
+show tables;
+create table category (
+    id INTEGER PRIMARY KEY auto_increment,
+    name VARCHAR(200) not null
+);
+select * from category;
+
+206.Category Domain ( model atau entity dll)
+
+207.Category Repository
+
+208.Category Repository Implementation
+
+209.Category Sevice
+
+210.Category Sevice Implementation
+
+211.Category Validation
+Todo: buat sendiri validasinya jangan gunakan 3rd lib
+
+212.Category Controller
+
+213.Category Controller Implementation
+
+214.HTTP Router
+
+215.HTTP Server
+
+216.Manual Test API
+
+217.Error Hnadler
+
+218.Authentication
+
+219.Unit Test
+	-menambah dependency
+	 go get github.com/stretchr/testify
+
+	Membuat Database khusus testing
+	create database belajar_golang_restful_api_test;
+	use belajar_golang_restful_api_test;
+	show tables;
+	create table category (
+    		id INTEGER PRIMARY KEY auto_increment,
+    		name VARCHAR(200) not null
+	);
+	select * from category;
