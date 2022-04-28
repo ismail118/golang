@@ -1,0 +1,4 @@
+time="2022-04-29T06:19:26+07:00" level=info msg="Hello World"
+time="2022-04-29T06:23:11+07:00" level=info msg="Hello World"
+time="2022-04-29T06:23:11+07:00" level=warning msg="Hello World"
+time="2022-04-29T06:23:11+07:00" level=error msg="Hello World"

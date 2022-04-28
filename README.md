@@ -1592,3 +1592,29 @@ select * from category;
 	-Untuk membuat Logger, kita bisa menggunakan function New() pada package logrus
 	-Dan hasil dari function New() adalah sebuah pointer Logger
 
+245.Level
+	-Dalam Logging, hal yang paling penting adalah Level
+	-Level adah penentuan prioritas atau jenis dari sebuah kejadian
+	-Level itu dimulai dari level terendah sampai level tertinggi
+	-Logrus mendukung banyak sekali level
+	
+	Logging Level
+	-Kenapa Trace dan Debug tidak keluar di console?
+	-Karena secara default, Logging Level yang digunakan adalah Info, artinya hanya prioritas Info keatas yang di log
+	-Untuk mengubah Logging Level, kita bisa gunakan logger.SetLevel()
+
+246.Output
+	-Secara default, output tujuan log yang kita kirim via Logrus adalah ke Console
+	-Kadang kita butuh mengubah output tujuan log, misal ke File atau Database
+	-Output Logger adalah io.Writer, jadi kita bisa menggunakan io.Writer dari Go-Lang atau bisa membuat sendiri mengikuti kontrak io.Writer
+
+247.Formatter
+	-Saat Logger mengirim data ke Output, log yang kita kirim akan diformat menggunakan object Formatter
+	-Logrus secara default memiliki dua formatter :
+	-TextFormatter, yang secara default digunakan
+	-JSONFormatter, yang bisa digunakan untuk memformat pesan log menjadi data JSON
+	-Untuk mengubah formatter, kita bisa gunakan function logger.SetFormatter()
+
+
+
+go get github.com/sirupsen/logrus
