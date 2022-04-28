@@ -1555,3 +1555,40 @@ select * from category;
 237.Cleanup Function
 	-Jika Provider membuat object yang membutuhkan proses cleanup (pembersihan) setelah object dibuat, maka pada provider kita bisa mengembalikan closure
 	-Closure secara otomatis akan dipanggil dalam proses cleanup oleh Google Wire
+
+#Bagian 12 (Golang Logging)
+
+241.Pengenalan Logging
+	-Log file adalah file yang berisikan informasi kejadian dari sebuah sistem
+	-Biasanya dalam log file, terdapat informasi waktu kejadian dan pesan kejadian
+	-Logging adalah aksi menambah informasi log ke log file
+	-Logging sudah menjadi standar industri untuk menampilkan informasi yang terjadi di aplikasi yang kita buat
+	-Logging bukan hanya untuk menampilkan informasi, kadang digunakan untuk proses debugging ketika terjadi masalah di aplikasi kita
+
+242.Logging Library
+	-Menggunakan Go-Lang sebenarnya kita bisa package log untuk melakukan logging
+	-0Hanya saja karena fiturnya terbatas, oleh karena itu kebanyakan programmer tidak menggunakannya
+	-Pada kelas ini kita tidak akan menggunakan package log di Go-Lang untuk belajar Logging
+
+	Banyak sekali library yang bisa kita gunakan untuk logging di Go-Lang, seperti :
+	-Logrus : https://github.com/sirupsen/logrus 
+	-Zap : https://github.com/uber-go/zap 
+	-Zerolog : https://github.com/rs/zerolog 
+	 Dan masih banyak yang lainnya
+
+	#Logrus
+	-Pada kelas ini kita akan menggunakan Logrus
+	-Logrus adalah library logging untuk Go-Lang yang saat ini paling populer
+	 https://github.com/sirupsen/logrus
+
+243.Membuat Project
+	go mod init kursus/belajar-golang-logging
+
+	Menambah Dependency
+	go get github.com/sirupsen/logrus
+
+244.Logger
+	-Logger adalah struct utama pada Logrus untuk melakukan logging
+	-Untuk membuat Logger, kita bisa menggunakan function New() pada package logrus
+	-Dan hasil dari function New() adalah sebuah pointer Logger
+
