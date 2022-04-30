@@ -1627,6 +1627,19 @@ select * from category;
 	-Fields adalah alias untuk map[string]interface{}
 	-Caranya kita bisa menggunakan function logger.WithFields()
 
+249.Entry
+	-Entry adalah sebuah Struct representasi dari log yang kita kirim menggunakan Logrus Logger
+	-Setiap log yang kita kirim, maka akan dibuatkan object Entry
+	-Contohnya ketika kita membuat Formatter sendiri, maka parameter yang kita dapat untuk melakukan formatting bukanlah string message, melainkan object Entry
+	 https://github.com/sirupsen/logrus/blob/master/entry.go 
+	-Untuk membuat entry, kita bisa menggunakan function logrus.NewEntry()
+
+250.Hook
+	-Hook adalah sebuah Struct yang bisa kita tambahkan ke Logger sebagai callback yang akan dieksekusi ketika terdapat kejadian log untuk level tertentu
+	-Contohnya misal, ketika ada log error, kita ingin mengirim notifikasi via chat ke programmer, dan lain-lain
+	-Kita bisa menambah Hook ke Logger dengan menggunakan function logger.AddHook()
+	-Dan kita juga bisa menambahkan lebih dari satu Hook ke Logger
+
 
 
 go get github.com/sirupsen/logrus
