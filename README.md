@@ -1640,6 +1640,11 @@ select * from category;
 	-Kita bisa menambah Hook ke Logger dengan menggunakan function logger.AddHook()
 	-Dan kita juga bisa menambahkan lebih dari satu Hook ke Logger
 
+251.Singleton (tidak di sarankan menggunakan cara ini)
+	-Logrus sendiri memiliki singleton object untuk Logger, sehingga kita tidak perlu membuat object Logger sendiri sebenarnya
+	-Namun artinya, jika kita ubah data Logger singleton tersebut, maka secara otomatis yang menggunakan Logger tersebut akan berubah
+	-Secara default, Logger singleton yang ada di logrus menggunakan TextFormatter dan Info Level
+	-Cara menggunakan Logger singleton ini, kita bisa langsung menggunakan package logrus nya saja
 
 
 go get github.com/sirupsen/logrus
