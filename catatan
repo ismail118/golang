@@ -1648,3 +1648,27 @@ select * from category;
 
 
 go get github.com/sirupsen/logrus
+
+
+Bagian 14 Golang Generics
+
+255.Pengenalan Generic
+	-Generic adalah kemampuan menambahkan parameter type saat membuat function
+	-Berbeda dengan tipe data yang biasa kita gunakan di function, generic memungkinkan kita bisa mengubah-ubah bentuk tipe data sesuai dengan yang kita mau.
+	-Fitur generics baru ada sejak Go-Lang versi 1.18
+
+	Manfaat Generic
+	-Pengecekan ketika proses kompilasi
+	-Tidak perlu manual menggunakan pengecekan tipe data dan konversi tipe data
+	-Memudahkan programmer membuat kode program yang generic sehingga bisa digunakan oleh berbagai tipe data
+
+256.Membuat Project
+	go mod init ProgrammerZamanNow/belajar-golang-generics
+	go get github.com/stretchr/testify
+
+
+
+
+
+
+go get github.com/stretchr/testify
