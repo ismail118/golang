@@ -1667,6 +1667,23 @@ Bagian 14 Golang Generics
 	go get github.com/stretchr/testify
 
 
+257.Type Parameter
+	-Untuk menandai sebuah function merupakan tipe generic, kita perlu menambahkan Type Parameter pada function tersebut
+	-Pembuatan Type Parameter menggunakan tanda [] (kurung kotak), dimana di dalam kurung kotak tersebut, kita tentukan nama Type Parameter nya
+	-Hampir sama dengan di bahasa pemrograman lain seperti Java, C# dan lain-lain, biasanya nama Type Parameter hanya menggunakan satu huruf, misal T, K, V dan lain-lain. Walaupun bisa saja lebih dari satu huruf
+
+	Type Constraint
+	-Di bahasa pemrograman seperti Java, C# dan lain-lain, Type Parameter biasanya tidak perlu kita tentukan tipe datanya, berbeda dengan di Go-Lang.
+	-Dari pengalaman yang dilakukan para pengembang Go-Lang, akhirnya di Go-Lang, Type Parameter wajib memiliki constraint
+	-Type Constraint merupakan aturan yang digunakan untuk menentukan tipe data yang diperbolehkan pada Type Parameter
+	-Contoh, jika kita ingin Type Parameter bisa digunakan untuk semua tipe data, kita bisa gunakan interface{} (kosong) sebagai constraint nya
+	-Type Constraint yang lebih detail akan kita bahas di materi Type Sets
+
+	Menggunakan Type Parameter
+	-Setelah kita buat Type Parameter di function, selanjutnya kita bisa menggunakan Type Parameter tersebut sebagai tipe data di dalam function tersebut
+	-Misal nya digunakan untuk return type atau function parameter
+	-Kita cukup gunakan nama Type Parameter nya saja
+	-Type Parameter hanya bisa digunakan di functionnya saja, tidak bisa digunakan di luar function
 
 
 
