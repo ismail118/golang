@@ -1685,6 +1685,9 @@ Bagian 14 Golang Generics
 	-Kita cukup gunakan nama Type Parameter nya saja
 	-Type Parameter hanya bisa digunakan di functionnya saja, tidak bisa digunakan di luar function
 
+258.Multiple Type Parameter
+	-Penggunakan Type Parameter bisa lebih dari satu, jika kita ingin menambahkan multiple Type Parameter, kita cukup gunakan tanda , (koma) sebagai pemisah antar Type Parameter
+	-Nama Type Parameter harus berbeda, tidak boleh sama jika kita menambah Type Parameter lebih dari satu
 
 
 
