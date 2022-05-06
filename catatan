@@ -1698,7 +1698,7 @@ Bagian 14 Golang Generics
 	-Go-Lang sendiri sebenarnya tidak memiliki pewarisan, namun seperti kita ketahui, jika kita membuat sebuah type yang sesuai dengan kontrak interface, maka dianggap sebagai implementasi interface tersebut
 	-Type Parameter juga mendukung hal serupa, kita bisa gunakan constraint dengan menggunakan interface, maka secara otomatis semua interface yang compatible dengan type constraint tersebut bisa kita gunakan
 
-261.Type Set
+261.Type Sets
 	-Salah satu fitur yang menarik di Go-Lang Generic adalah Type Sets
 	-Dengan fitur ini, kita bisa menentukan lebih dari satu tipe constraint yang diperbolehkan pada type parameter
 
