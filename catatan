@@ -1694,6 +1694,25 @@ Bagian 14 Golang Generics
 	-comparable merupakan interface yang diimplementasikan oleh tipe data yang bisa dibandingkan (menggunakan operator != dan ==), 
 	 seperti booleans, numbers, strings, pointers, channels, interfaces, array yang isinya ada comparable type, atau structs yang fields nya adalah comparable type
 
+260.Type Parameter Inherit
+	-Go-Lang sendiri sebenarnya tidak memiliki pewarisan, namun seperti kita ketahui, jika kita membuat sebuah type yang sesuai dengan kontrak interface, maka dianggap sebagai implementasi interface tersebut
+	-Type Parameter juga mendukung hal serupa, kita bisa gunakan constraint dengan menggunakan interface, maka secara otomatis semua interface yang compatible dengan type constraint tersebut bisa kita gunakan
+
+261.Type Set
+	-Salah satu fitur yang menarik di Go-Lang Generic adalah Type Sets
+	-Dengan fitur ini, kita bisa menentukan lebih dari satu tipe constraint yang diperbolehkan pada type parameter
+
+	Membuat Type Set
+	-Type Set adalah sebuah interface
+	-Cara membuat Type Set :
+	
+	type NamaTypeSet interface {
+     		P | Q | R
+	}
+
+	-TypeSet hanya bisa digunakan pada type parameter, tidak bisa digunakan sebagai tipe data field atau variable
+	-Jika operator bisa digunakan di semua tipe data di dalam type set, maka operator tersebut bisa digunakan dalam kode generic
+
 
 
 go get github.com/stretchr/testify
