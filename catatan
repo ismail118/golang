@@ -1689,6 +1689,11 @@ Bagian 14 Golang Generics
 	-Penggunakan Type Parameter bisa lebih dari satu, jika kita ingin menambahkan multiple Type Parameter, kita cukup gunakan tanda , (koma) sebagai pemisah antar Type Parameter
 	-Nama Type Parameter harus berbeda, tidak boleh sama jika kita menambah Type Parameter lebih dari satu
 
+259.Comparable
+	-Selain any, di Go-Lang versi 1.18 juga terdapat tipe data bernama comparable
+	-comparable merupakan interface yang diimplementasikan oleh tipe data yang bisa dibandingkan (menggunakan operator != dan ==), 
+	 seperti booleans, numbers, strings, pointers, channels, interfaces, array yang isinya ada comparable type, atau structs yang fields nya adalah comparable type
+
 
 
 go get github.com/stretchr/testify
