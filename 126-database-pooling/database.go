@@ -12,7 +12,7 @@ func GetConnection() *sql.DB {
 	}
 
 	// setup database connection pooling
-	db.SetMaxOpenConns(10)
+	db.SetMaxIdleConns(10)
 	db.SetMaxOpenConns(100)
 	db.SetConnMaxIdleTime(5 * time.Minute)
 	db.SetConnMaxLifetime(60 * time.Minute)
